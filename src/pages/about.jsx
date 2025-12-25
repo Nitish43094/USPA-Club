@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-
+import teamImg1 from '../assets/teamImage1.jpeg'
+import { useNavigate } from "react-router-dom";
+import Counter from "../components/Counter";
 const About = () => {
-    const [open, setOpen] = useState(false);
+    const navigate = useNavigate()
 
     return (
         <div className="flex flex-col min-h-screen bg-background-light dark:bg-background-dark font-display text-[#111813] dark:text-white antialiased overflow-x-hidden">
             {/* ================= HERO ================= */}
-            <section className="relative min-h-[600px] flex items-center justify-center overflow-hidden mt-8">
+            <section className="relative min-h-[420px] flex items-center justify-center overflow-hidden mt-8">
                 <div
                     className="absolute inset-0 bg-cover bg-center"
                     style={{
@@ -33,19 +35,37 @@ const About = () => {
             </section>
 
             {/* ================= STATS ================= */}
-            <section className="bg-[#0d1b11] border-y border-[#28392e] py-8">
+            <section className="bg-black border-y border-[#28392e] py-8">
                 <div className="max-w-[1280px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                    {[
-                        ["1998", "Founded"],
-                        ["15", "Pro Tables"],
-                        ["500+", "Active Members"],
-                        ["25+", "Years Experience"]
-                    ].map(([value, label]) => (
-                        <div key={label}>
-                            <div className="text-3xl font-black text-white">{value}</div>
-                            <div className="text-sm text-gray-400">{label}</div>
+
+                    <div>
+                        <div className="text-3xl font-black text-white">
+                            <Counter end={1998} />
                         </div>
-                    ))}
+                        <div className="text-sm text-gray-400">Founded</div>
+                    </div>
+
+                    <div>
+                        <div className="text-3xl font-black text-white">
+                            <Counter end={16} />
+                        </div>
+                        <div className="text-sm text-gray-400">Pro Tables</div>
+                    </div>
+
+                    <div>
+                        <div className="text-3xl font-black text-white">
+                            <Counter end={500} suffix="+" />
+                        </div>
+                        <div className="text-sm text-gray-400">Active Members</div>
+                    </div>
+
+                    <div>
+                        <div className="text-3xl font-black text-white">
+                            <Counter end={25} suffix="+" />
+                        </div>
+                        <div className="text-sm text-gray-400">Years Experience</div>
+                    </div>
+
                 </div>
             </section>
 
@@ -58,10 +78,10 @@ const About = () => {
                 <div className="grid grid-cols-[40px_1fr] gap-x-6">
                     {/* Timeline Item 1 */}
                     <div className="flex flex-col items-center gap-1 pt-3">
-                        <div className="text-primary bg-[#152319] p-2 rounded-full border border-[#28392e] z-10">
+                        <div className="text-primary bg-black p-2 rounded-full border border-[#28392e] z-10">
                             <span className="material-symbols-outlined">flag</span>
                         </div>
-                        <div className="w-[2px] bg-[#28392e] h-full grow -mt-1"></div>
+                        <div className="w-[2px] bg-black h-full grow -mt-1"></div>
                     </div>
 
                     <div className="flex flex-1 flex-col py-3 pb-10">
@@ -78,11 +98,11 @@ const About = () => {
 
                     {/* Timeline Item 2 */}
                     <div className="flex flex-col items-center gap-1">
-                        <div className="w-[2px] bg-[#28392e] h-4 -mb-1"></div>
-                        <div className="text-white bg-[#152319] p-2 rounded-full border border-[#28392e] z-10">
+                        <div className="w-[2px] bg-black h-4 -mb-1"></div>
+                        <div className="text-white bg-black p-2 rounded-full border border-[#28392e] z-10">
                             <span className="material-symbols-outlined">emoji_events</span>
                         </div>
-                        <div className="w-[2px] bg-[#28392e] h-full grow -mt-1"></div>
+                        <div className="w-[2px] bg-black h-full grow -mt-1"></div>
                     </div>
 
                     <div className="flex flex-1 flex-col py-3 pb-10">
@@ -99,11 +119,11 @@ const About = () => {
 
                     {/* Timeline Item 3 */}
                     <div className="flex flex-col items-center gap-1">
-                        <div className="w-[2px] bg-[#28392e] h-4 -mb-1"></div>
-                        <div className="text-white bg-[#152319] p-2 rounded-full border border-[#28392e] z-10">
+                        <div className="w-[2px] bg-black h-4 -mb-1"></div>
+                        <div className="text-white bg-black p-2 rounded-full border border-[#28392e] z-10">
                             <span className="material-symbols-outlined">storefront</span>
                         </div>
-                        <div className="w-[2px] bg-[#28392e] h-full grow -mt-1"></div>
+                        <div className="w-[2px] bg-black h-full grow -mt-1"></div>
                     </div>
 
                     <div className="flex flex-1 flex-col py-3 pb-10">
@@ -120,8 +140,8 @@ const About = () => {
 
                     {/* Timeline Item 4 */}
                     <div className="flex flex-col items-center gap-1 pb-3">
-                        <div className="w-[2px] bg-[#28392e] h-4 -mb-1"></div>
-                        <div className="text-primary bg-[#152319] p-2 rounded-full border border-[#28392e] z-10">
+                        <div className="w-[2px] bg-black h-4 -mb-1"></div>
+                        <div className="text-primary bg-black p-2 rounded-full border border-[#28392e] z-10">
                             <span className="material-symbols-outlined">local_police</span>
                         </div>
                     </div>
@@ -202,7 +222,7 @@ const About = () => {
                         <div className="p-6 rounded-xl bg-white dark:bg-[#152319] shadow-sm flex flex-col gap-4">
                             <div className="w-full aspect-square rounded-xl overflow-hidden bg-gray-200">
                                 <img
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIFsLloEhkQPQppkhVjtInGzkLnHiOEOxoMXi3bIB-gjukueWWLTGql-wyD-WW5cu4ZjsyykfysdBNQR9wsCCGwJdxWVZMbjqG9WViaaw-z3cgOmQLENcDSOiXvq-neNQqloU04i5mWlZI0JCPnXufzi4CZaaFEDYbtcDCgw6ml2j4L7J51xVHo1tCaLDbJ6kYsAttGcfRvPZvVe9AXds7_K7KWv0xeKC9h-2AcrKwv9oSch-VpD1mHfVX0JpAps_ofWgutarNzN9E"
+                                    src={teamImg1}
                                     alt="David Miller"
                                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                                 />
@@ -259,11 +279,51 @@ const About = () => {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button className="h-12 px-8 rounded-lg bg-yellow-400 hover:bg-[#0eb846] text-[#102216] text-base font-bold transition-all shadow-[0_0_20px_rgba(17,212,82,0.4)] hover:shadow-[0_0_30px_rgba(17,212,82,0.6)]">
-                            Learn More
+
+                        {/* Learn More Button */}
+                        <button
+                            onClick={() => navigate("/about")}
+                            className="
+                            relative overflow-hidden
+                            h-12 px-8 rounded-lg
+                            bg-yellow-400 text-[#102216] text-base font-bold
+                            transition-all duration-300 ease-out
+
+                            before:absolute before:inset-0
+                            before:bg-black
+                            before:translate-x-[-100%]
+                            before:transition-transform before:duration-300
+                            hover:before:translate-x-0
+
+                            hover:shadow-[0_0_30px_rgba(17,212,82,0.6)]
+                            "
+                        >
+                            <span className="relative z-10 transition-colors duration-300 hover:text-white">
+                                Learn More
+                            </span>
                         </button>
-                        <button className="h-12 px-8 rounded-lg bg-[#0d1b11] hover:bg-white/20 hover:text-black text-white border border-white/20 backdrop-blur-md text-base font-bold transition-all">
-                            View Membership
+
+                        {/* View Membership Button */}
+                        <button
+                            onClick={() => navigate("/book")}
+                            className="
+                            relative overflow-hidden
+                            h-12 px-8 rounded-lg
+                            bg-[#0d1b11] text-white text-base font-bold
+                            border border-white/20 backdrop-blur-md
+                            transition-all duration-300 ease-out
+
+                            before:absolute before:inset-0
+                            before:bg-yellow-400
+                            before:translate-x-[-100%]
+                            before:transition-transform before:duration-300
+                            hover:before:translate-x-0
+
+                            hover:text-black"
+                        >
+                            <span className="relative z-10 transition-colors duration-300">
+                                View Membership
+                            </span>
                         </button>
                     </div>
                 </div>

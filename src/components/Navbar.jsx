@@ -39,7 +39,7 @@ const Navbar = () => {
                 <a href="/">
                     <div className="flex items-center gap-4">
                         <div className="text-yellow-500">
-                            <span className="material-symbols-outlined text-3xl">sports_esports</span>
+                            <span className="material-symbols-outlined text-3xl hidden sm:block">playing_cards</span>
                         </div>
                         <h2 className="text-lg font-bold hidden sm:block">
                             USPA Club

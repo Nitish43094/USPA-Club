@@ -2,10 +2,11 @@ import React from "react";
 import { FaFacebook } from "react-icons/fa";
 import { SiInstagram } from "react-icons/si";
 import { FiTwitter } from "react-icons/fi";
+import { Link } from "react-router-dom";
 const Footer = () => {
     return (
         <footer
-            className="bg-[#0b140e] border-t border-[#28392e] py-16 text-sm"
+            className="bg-black border-t border-[#28392e] py-16 text-sm"
             id="contact"
         >
             <div className="max-w-[1280px] mx-auto px-4 md:px-10">
@@ -15,7 +16,7 @@ const Footer = () => {
                     <div className="flex flex-col gap-4">
                         <div className="flex items-center gap-2 text-white mb-2">
                             <span className="material-symbols-outlined text-primary text-2xl">
-                                sports_esports
+                                playing_cards
                             </span>
                             <span className="font-bold text-lg">USPA Club</span>
                         </div>
@@ -95,7 +96,7 @@ const Footer = () => {
                                 },
                                 {
                                     name: "Contact Us",
-                                    link: "/contactt"
+                                    link: "/contact"
                                 },
                                 {
                                     name: "Privacy Policy",
@@ -103,12 +104,12 @@ const Footer = () => {
                                 }
                             ].map((data, index) => (
                                 <li key={index}>
-                                    <a
-                                        href={data.link}
+                                    <Link
+                                        to={data.link}
                                         className="hover:text-primary transition-colors"
                                     >
                                         {data.name}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>

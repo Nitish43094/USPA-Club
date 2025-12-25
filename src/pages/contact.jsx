@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 
 export default function Contact() {
-    const [open, setOpen] = useState(false);
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -13,6 +13,7 @@ export default function Contact() {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Handle form submission here
+        toast.success("Send Successfull")
         console.log("Form submitted:", formData);
     };
 

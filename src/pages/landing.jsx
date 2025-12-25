@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import Counter from '../components/Counter'
 export default function Landing() {
-    const [open, setOpen] = useState(false);
+    const navigate = useNavigate()
     return (
         <div className="flex flex-col min-h-screen bg-background-light dark:bg-background-dark font-display text-[#111813] dark:text-white antialiased overflow-x-hidden">
 
@@ -30,31 +32,39 @@ export default function Landing() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="/about">
-                            <button
-                                className="
-                            relative overflow-hidden
-                            h-12 px-8 rounded-lg
-                            bg-yellow-400 text-[#102216] text-base font-bold
-                            transition-all duration-300 ease-out
-                            before:absolute before:inset-0
-                            before:bg-black
-                            before:translate-x-[-100%]
-                            before:transition-transform before:duration-300 before:ease-out
-                            hover:before:translate-x-0
-                            "
-                            >
-                                <span className="relative z-10 transition-colors duration-300 hover:text-white">
-                                    Learn More
-                                </span>
-                            </button>
-                        </a>
+                        <button
+                            onClick={() => navigate("/about")}
+                            className="
+                                relative overflow-hidden inline-flex items-center justify-center
+                                h-12 px-8 rounded-lg
+                                bg-yellow-400 text-[#102216] text-base font-bold
+                                transition-all duration-300 ease-out
 
-                        <a href="/book">
-                            <button className="h-12 px-8 rounded-lg bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-md text-base font-bold transition-all">
-                                View Membership
-                            </button>
-                        </a>
+                                before:absolute before:inset-0
+                                before:bg-black
+                                before:translate-x-[-100%]
+                                before:transition-transform before:duration-300 before:ease-out
+                                hover:before:translate-x-0
+                            "
+                        >
+                            <span className="relative z-10 transition-colors duration-300 hover:text-white">
+                                Learn More
+                            </span>
+                        </button>
+
+                        <Link
+                            to="/book"
+                            className="
+                                inline-flex items-center justify-center
+                                h-12 px-8 rounded-lg
+                                bg-white/10 hover:bg-white/20
+                                text-white border border-white/20 backdrop-blur-md
+                                text-base font-bold transition-all
+                            "
+                        >
+                            View Membership
+                        </Link>
+
                     </div>
                 </div>
             </section>
@@ -62,17 +72,35 @@ export default function Landing() {
             {/* ================= STATS ================= */}
             <section className="bg-black border-y border-[#28392e] py-8">
                 <div className="max-w-[1280px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                    {[
-                        ["12", "Pro Tables"],
-                        ["24/7", "Member Access"],
-                        ["500+", "Active Members"],
-                        ["Weekly", "Tournaments"]
-                    ].map(([value, label]) => (
-                        <div key={label}>
-                            <div className="text-3xl font-black text-white">{value}</div>
-                            <div className="text-sm text-gray-400">{label}</div>
+
+                    <div>
+                        <div className="text-3xl font-black text-white">
+                            <Counter end={16} />
                         </div>
-                    ))}
+                        <div className="text-sm text-gray-400">Pro Tables</div>
+                    </div>
+
+                    <div>
+                        <div className="text-3xl font-black text-white">
+                            <Counter end={24} suffix="/7" />
+                        </div>
+                        <div className="text-sm text-gray-400">Member Access</div>
+                    </div>
+
+                    <div>
+                        <div className="text-3xl font-black text-white">
+                            <Counter end={500} suffix="+" />
+                        </div>
+                        <div className="text-sm text-gray-400">Active Members</div>
+                    </div>
+
+                    <div>
+                        <div className="text-3xl font-black text-white">
+                            Weekly
+                        </div>
+                        <div className="text-sm text-gray-400">Tournaments</div>
+                    </div>
+
                 </div>
             </section>
             {/* -- Features Section -- */}
@@ -85,12 +113,16 @@ export default function Landing() {
                         <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
                             We provide the best environment for both casual players and serious competitors. From our meticulously maintained cloth to our sound-dampened VIP rooms, every detail is designed for the perfect break.
                         </p>
-                        <a href="/gallery">
-                            <button className="text-primary font-bold flex items-center gap-2 group w-fit">
-                                View All Amenities
-                                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                            </button>
-                        </a>
+                        <Link
+                            to="/gallery"
+                            className="text-primary font-bold flex items-center gap-2 group w-fit"
+                        >
+                            View All Amenities
+                            <span className="material-symbols-outlined transition-transform group-hover:translate-x-1">
+                                arrow_forward
+                            </span>
+                        </Link>
+
                     </div>
                     <div className="flex-[1.5] grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
                         <div className="rounded-xl border border-gray-200 dark:border-[#28392e] bg-white dark:bg-[#152319] p-6 flex flex-col gap-4 hover:border-primary/50 transition-colors group">
@@ -150,12 +182,12 @@ export default function Landing() {
                             </h2>
                         </div>
 
-                        <a
-                            href="/event"
+                        <Link
+                            to="/event"
                             className="text-sm font-bold border-b border-gray-300 dark:border-gray-600 pb-1 hover:text-primary hover:border-primary transition-colors"
                         >
                             View Full Calendar
-                        </a>
+                        </Link>
                     </div>
 
                     {/* Grid */}
@@ -295,11 +327,21 @@ export default function Landing() {
                                 / hour
                             </span>
                         </div>
-                        <a href="/contact">
-                            <button className="w-full rounded-lg h-12 bg-gray-100 dark:bg-[#28392e] text-gray-900 dark:text-white font-bold text-sm hover:bg-gray-200 dark:hover:bg-[#344a3b] transition-colors">
-                                Walk In
-                            </button>
-                        </a>
+                        <button
+                            onClick={() => navigate("/contact")}
+                            className="
+                            w-full inline-flex items-center justify-center
+                            rounded-lg h-12
+                            bg-gray-100 dark:bg-[#28392e]
+                            text-gray-900 dark:text-white
+                            font-bold text-sm
+                            hover:bg-gray-200 dark:hover:bg-[#344a3b]
+                            transition-colors
+                        "
+                        >
+                            Walk In
+                        </button>
+
                         <ul className="flex flex-col gap-3">
                             <li className="flex gap-3 text-sm text-gray-600 dark:text-gray-300">
                                 <span className="material-symbols-outlined text-primary text-[20px]">
@@ -343,11 +385,11 @@ export default function Landing() {
                                 / month
                             </span>
                         </div>
-                        <a href="/contact">
+                        <Link to="/contact">
                             <button className="w-full rounded-lg h-12 bg-primary hover:bg-[#0eb846] text-[#102216] font-bold text-sm transition-colors shadow-lg shadow-primary/20">
                                 Join Now
                             </button>
-                        </a>
+                        </Link>
                         <ul className="flex flex-col gap-3">
                             <li className="flex gap-3 text-sm text-gray-600 dark:text-gray-300">
                                 <span className="material-symbols-outlined text-primary text-[20px]">
@@ -396,13 +438,11 @@ export default function Landing() {
                                 / month
                             </span>
                         </div>
-
-                        <a href="/contact">
+                        <Link to="/contact">
                             <button className="w-full rounded-lg h-12 bg-gray-100 dark:bg-[#28392e] text-gray-900 dark:text-white font-bold text-sm hover:bg-gray-200 dark:hover:bg-[#344a3b] transition-colors">
                                 Apply for League
                             </button>
-                        </a>
-
+                        </Link>
                         <ul className="flex flex-col gap-3">
                             <li className="flex gap-3 text-sm text-gray-600 dark:text-gray-300">
                                 <span className="material-symbols-outlined text-primary text-[20px]">

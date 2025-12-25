@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import toast from "react-hot-toast";
 
 const Event = () => {
     const [selectedFilter, setSelectedFilter] = useState("all");
@@ -88,10 +89,13 @@ const Event = () => {
                             The biggest cue sports event of the year is here. Compete with the best for a grand prize pool of $5,000. Registration closes soon.
                         </h2>
                         <div className="flex flex-wrap gap-4 mt-4">
-                            <button className="h-12 px-6 bg-yellow-400 hover:bg-[#0eb846] text-[#102216] text-base font-bold rounded-lg transition-all shadow-[0_0_20px_rgba(17,212,82,0.4)] hover:shadow-[0_0_30px_rgba(17,212,82,0.6)]">
+                            <button
+                            onClick={()=> toast.success("Comming Soon...")}
+                            className="h-12 px-6 bg-yellow-400 hover:bg-[#0eb846] text-[#102216] text-base font-bold rounded-lg transition-all shadow-[0_0_20px_rgba(17,212,82,0.4)] hover:shadow-[0_0_30px_rgba(17,212,82,0.6)]">
                                 Register Now
                             </button>
-                            <button className="h-12 px-6 bg-[#28392e]/80 hover:bg-[#28392e] backdrop-blur-sm border border-white/10 text-white text-base font-bold rounded-lg transition-colors">
+                            <button onClick={()=> toast.success("Comming Soon...")}
+                            className="h-12 px-6 bg-[#28392e]/80 hover:bg-[#28392e] backdrop-blur-sm border border-white/10 text-white text-base font-bold rounded-lg transition-colors">
                                 View Details
                             </button>
                         </div>
@@ -164,7 +168,7 @@ const Event = () => {
                         {/* Section: Tournaments */}
                         <div className="flex flex-col gap-4">
                             <div className="flex items-center justify-between">
-                                <h3 className="text-white dark:text-white text-[22px] font-bold leading-tight tracking-tight">
+                                <h3 className="text-black dark:text-white text-[22px] font-bold leading-tight tracking-tight">
                                     Major Tournaments
                                 </h3>
                                 <a className="text-yellow-400 hover:text-[#0eb846] text-sm font-bold hover:underline transition-colors" href="#">
@@ -225,7 +229,8 @@ const Event = () => {
                                         </div>
                                     </div>
                                     <div className="flex items-center sm:self-center pt-2 sm:pt-0">
-                                        <button className="w-full sm:w-auto bg-yellow-400 hover:bg-[#0eb846] text-[#102216] font-bold py-2.5 px-6 rounded-lg text-sm transition-all shadow-lg shadow-yellow-400/20">
+                                        <button onClick={()=> toast.success("Comming Soon...")}
+                                        className="w-full sm:w-auto bg-yellow-400 hover:bg-[#0eb846] text-[#102216] font-bold py-2.5 px-6 rounded-lg text-sm transition-all shadow-lg shadow-yellow-400/20">
                                             Register
                                         </button>
                                     </div>
@@ -236,7 +241,7 @@ const Event = () => {
                         {/* Section: Leagues */}
                         <div className="flex flex-col gap-4 mt-4">
                             <div className="flex items-center justify-between">
-                                <h3 className="text-white dark:text-white text-[22px] font-bold leading-tight tracking-tight">
+                                <h3 className="text-black dark:text-white text-[22px] font-bold leading-tight tracking-tight">
                                     Ongoing Leagues
                                 </h3>
                             </div>
@@ -283,7 +288,8 @@ const Event = () => {
                                                 +24
                                             </div>
                                         </div>
-                                        <button className="text-yellow-400 hover:text-[#0eb846] text-sm font-bold transition-colors flex items-center gap-1">
+                                        <button onClick={()=> toast.success("Comming Soon...")}
+                                        className="text-yellow-400 hover:text-[#0eb846] text-sm font-bold transition-colors flex items-center gap-1">
                                             View Leaderboard{" "}
                                             <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
                                         </button>
@@ -361,7 +367,8 @@ const Event = () => {
                                 <p className="text-gray-300 text-xs mt-1 mb-3">
                                     Learn from the world champion in this exclusive 3-hour session.
                                 </p>
-                                <button className="w-full bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white text-xs font-bold py-2 rounded transition-colors">
+                                <button onClick={()=> toast.success("Comming Soon...")}
+                                className="w-full bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white text-xs font-bold py-2 rounded transition-colors">
                                     Book Your Spot
                                 </button>
                             </div>

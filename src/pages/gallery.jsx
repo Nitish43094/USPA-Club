@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Gallery() {
-    const [open, setOpen] = useState(false);
+    const navigate = useNavigate()
     const [selectedImage, setSelectedImage] = useState(null);
 
     // Gallery images - you can replace these with your actual images
@@ -197,11 +198,50 @@ export default function Gallery() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button className="h-12 px-8 rounded-lg bg-yellow-400 hover:bg-[#0eb846] text-[#102216] text-base font-bold transition-all shadow-[0_0_20px_rgba(17,212,82,0.4)] hover:shadow-[0_0_30px_rgba(17,212,82,0.6)]">
-                            Learn More
+
+                        {/* Learn More Button */}
+                        <button onClick={() => navigate("/about")}
+                            className="
+                            relative overflow-hidden
+                            h-12 px-8 rounded-lg
+                            bg-yellow-400 text-[#102216] text-base font-bold
+                            transition-all duration-300 ease-out
+
+                            before:absolute before:inset-0
+                            before:bg-black
+                            before:translate-x-[-100%]
+                            before:transition-transform before:duration-300
+                            hover:before:translate-x-0
+
+                            hover:shadow-[0_0_30px_rgba(17,212,82,0.6)]
+                            "
+                        >
+                            <span className="relative z-10 transition-colors duration-300 hover:text-white">
+                                Learn More
+                            </span>
                         </button>
-                        <button className="h-12 px-8 rounded-lg bg-[#102216] hover:bg-white hover:text-black text-white border border-white/20 backdrop-blur-md text-base font-bold transition-all">
-                            View Membership
+
+                        {/* View Membership Button */}
+                        <button
+                            onClick={() => navigate("/book")}
+                            className="
+                            relative overflow-hidden
+                            h-12 px-8 rounded-lg
+                            bg-[#0d1b11] text-white text-base font-bold
+                            border border-white/20 backdrop-blur-md
+                            transition-all duration-300 ease-out
+
+                            before:absolute before:inset-0
+                            before:bg-yellow-400
+                            before:translate-x-[-100%]
+                            before:transition-transform before:duration-300
+                            hover:before:translate-x-0
+
+                            hover:text-black"
+                        >
+                            <span className="relative z-10 transition-colors duration-300">
+                                View Membership
+                            </span>
                         </button>
                     </div>
                 </div>
