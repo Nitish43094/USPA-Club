@@ -30,18 +30,37 @@ export default function Landing() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button className="h-12 px-8 rounded-lg bg-yellow-400 hover:bg-[#0eb846] text-[#102216] text-base font-bold transition-all shadow-[0_0_20px_rgba(17,212,82,0.4)] hover:shadow-[0_0_30px_rgba(17,212,82,0.6)]">
-                            Learn More
-                        </button>
-                        <button className="h-12 px-8 rounded-lg bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-md text-base font-bold transition-all">
-                            View Membership
-                        </button>
+                        <a href="/about">
+                            <button
+                                className="
+                            relative overflow-hidden
+                            h-12 px-8 rounded-lg
+                            bg-yellow-400 text-[#102216] text-base font-bold
+                            transition-all duration-300 ease-out
+                            before:absolute before:inset-0
+                            before:bg-black
+                            before:translate-x-[-100%]
+                            before:transition-transform before:duration-300 before:ease-out
+                            hover:before:translate-x-0
+                            "
+                            >
+                                <span className="relative z-10 transition-colors duration-300 hover:text-white">
+                                    Learn More
+                                </span>
+                            </button>
+                        </a>
+
+                        <a href="/book">
+                            <button className="h-12 px-8 rounded-lg bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-md text-base font-bold transition-all">
+                                View Membership
+                            </button>
+                        </a>
                     </div>
                 </div>
             </section>
 
             {/* ================= STATS ================= */}
-            <section className="bg-[#0d1b11] border-y border-[#28392e] py-8">
+            <section className="bg-black border-y border-[#28392e] py-8">
                 <div className="max-w-[1280px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                     {[
                         ["12", "Pro Tables"],
@@ -66,10 +85,12 @@ export default function Landing() {
                         <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
                             We provide the best environment for both casual players and serious competitors. From our meticulously maintained cloth to our sound-dampened VIP rooms, every detail is designed for the perfect break.
                         </p>
-                        <button className="text-primary font-bold flex items-center gap-2 group w-fit">
-                            View All Amenities
-                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                        </button>
+                        <a href="/gallery">
+                            <button className="text-primary font-bold flex items-center gap-2 group w-fit">
+                                View All Amenities
+                                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                            </button>
+                        </a>
                     </div>
                     <div className="flex-[1.5] grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
                         <div className="rounded-xl border border-gray-200 dark:border-[#28392e] bg-white dark:bg-[#152319] p-6 flex flex-col gap-4 hover:border-primary/50 transition-colors group">
@@ -130,7 +151,7 @@ export default function Landing() {
                         </div>
 
                         <a
-                            href="#"
+                            href="/event"
                             className="text-sm font-bold border-b border-gray-300 dark:border-gray-600 pb-1 hover:text-primary hover:border-primary transition-colors"
                         >
                             View Full Calendar
@@ -274,11 +295,11 @@ export default function Landing() {
                                 / hour
                             </span>
                         </div>
-
-                        <button className="w-full rounded-lg h-12 bg-gray-100 dark:bg-[#28392e] text-gray-900 dark:text-white font-bold text-sm hover:bg-gray-200 dark:hover:bg-[#344a3b] transition-colors">
-                            Walk In
-                        </button>
-
+                        <a href="/contact">
+                            <button className="w-full rounded-lg h-12 bg-gray-100 dark:bg-[#28392e] text-gray-900 dark:text-white font-bold text-sm hover:bg-gray-200 dark:hover:bg-[#344a3b] transition-colors">
+                                Walk In
+                            </button>
+                        </a>
                         <ul className="flex flex-col gap-3">
                             <li className="flex gap-3 text-sm text-gray-600 dark:text-gray-300">
                                 <span className="material-symbols-outlined text-primary text-[20px]">
@@ -322,11 +343,11 @@ export default function Landing() {
                                 / month
                             </span>
                         </div>
-
-                        <button className="w-full rounded-lg h-12 bg-primary hover:bg-[#0eb846] text-[#102216] font-bold text-sm transition-colors shadow-lg shadow-primary/20">
-                            Join Now
-                        </button>
-
+                        <a href="/contact">
+                            <button className="w-full rounded-lg h-12 bg-primary hover:bg-[#0eb846] text-[#102216] font-bold text-sm transition-colors shadow-lg shadow-primary/20">
+                                Join Now
+                            </button>
+                        </a>
                         <ul className="flex flex-col gap-3">
                             <li className="flex gap-3 text-sm text-gray-600 dark:text-gray-300">
                                 <span className="material-symbols-outlined text-primary text-[20px]">
@@ -376,9 +397,11 @@ export default function Landing() {
                             </span>
                         </div>
 
-                        <button className="w-full rounded-lg h-12 bg-gray-100 dark:bg-[#28392e] text-gray-900 dark:text-white font-bold text-sm hover:bg-gray-200 dark:hover:bg-[#344a3b] transition-colors">
-                            Apply for League
-                        </button>
+                        <a href="/contact">
+                            <button className="w-full rounded-lg h-12 bg-gray-100 dark:bg-[#28392e] text-gray-900 dark:text-white font-bold text-sm hover:bg-gray-200 dark:hover:bg-[#344a3b] transition-colors">
+                                Apply for League
+                            </button>
+                        </a>
 
                         <ul className="flex flex-col gap-3">
                             <li className="flex gap-3 text-sm text-gray-600 dark:text-gray-300">

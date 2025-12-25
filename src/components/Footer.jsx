@@ -17,7 +17,7 @@ const Footer = () => {
                             <span className="material-symbols-outlined text-primary text-2xl">
                                 sports_esports
                             </span>
-                            <span className="font-bold text-lg">The Break Room</span>
+                            <span className="font-bold text-lg">USPA Club</span>
                         </div>
 
                         <p className="text-gray-400 leading-relaxed">
@@ -89,18 +89,25 @@ const Footer = () => {
                         <h4 className="text-white font-bold mb-4">Quick Links</h4>
                         <ul className="flex flex-col gap-2 text-gray-400">
                             {[
-                                "About Us",
-                                "House Rules",
-                                "Equipment Shop",
-                                "Careers",
-                                "Privacy Policy",
-                            ].map((link) => (
-                                <li key={link}>
+                                {
+                                    name: "About Us",
+                                    link: "/about"
+                                },
+                                {
+                                    name: "Contact Us",
+                                    link: "/contactt"
+                                },
+                                {
+                                    name: "Privacy Policy",
+                                    link: "#"
+                                }
+                            ].map((data, index) => (
+                                <li key={index}>
                                     <a
-                                        href="#"
+                                        href={data.link}
                                         className="hover:text-primary transition-colors"
                                     >
-                                        {link}
+                                        {data.name}
                                     </a>
                                 </li>
                             ))}
@@ -110,8 +117,8 @@ const Footer = () => {
 
                 {/* Bottom Bar */}
                 <div className="pt-8 border-t border-[#28392e] flex flex-col md:flex-row justify-between gap-4 text-xs text-gray-500">
-                    <p>© 2023 The Break Room Snooker Club. All rights reserved.</p>
-                    <p>Designed for the game.</p>
+                    <p>© 2023 USPA Club. All rights reserved.</p>
+                    <p>Designed By Nitish Kushwaha.</p>
                 </div>
             </div>
         </footer>
