@@ -382,9 +382,9 @@ const Event = () => {
                             </p>
                             <a
                                 className="text-yellow-400 hover:text-[#0eb846] text-xs font-bold flex items-center gap-1 hover:underline transition-colors"
-                                href="mailto:tournament@snookerclub.com"
+                                href="mailto:ultimatesnookerarena@gmail.com"
                             >
-                                <span className="material-symbols-outlined text-[14px]">mail</span> tournament@snookerclub.com
+                                <span className="material-symbols-outlined text-[14px]">mail</span> ultimatesnookerarena@gmail.com
                             </a>
                         </div>
                     </div>

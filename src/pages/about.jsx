@@ -228,8 +228,8 @@ const About = () => {
                                 />
                             </div>
                             <div>
-                                <div className="font-bold text-sm">David Miller</div>
-                                <div className="text-xs text-gray-500">Head Coach</div>
+                                <div className="font-bold text-sm">Sushant Sinha</div>
+                                <div className="text-xs text-gray-500">Co-founder</div>
                             </div>
                         </div>
 

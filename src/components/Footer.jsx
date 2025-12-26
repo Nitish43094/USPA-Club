@@ -27,15 +27,15 @@ const Footer = () => {
                         </p>
 
                         <div className="flex gap-4 mt-2">
-                            <a href="/facebook">
+                            <a href="https://www.facebook.com/share/17iZAuA37y/">
                                 <FaFacebook className="text-[1.5rem] text-white hover:text-yellow-400" />
                             </a>
-                            <a href="/instagram">
+                            <a href="https://www.instagram.com/ultimatesnooker_poolarena?igsh=MTNhOGJsNHVsbXQ2cA%3D%3D&utm_source=qr">
                                 <SiInstagram className="text-[1.5rem] text-white hover:text-yellow-400" />
                             </a>
-                            <a href="/twitter">
+                            {/* <a href="/twitter">
                                 <FiTwitter className="text-[1.5rem] text-white hover:text-yellow-400" />
-                            </a>
+                            </a> */}
                         </div>
                     </div>
 
@@ -47,22 +47,45 @@ const Footer = () => {
                                 <span className="material-symbols-outlined text-primary text-lg mt-0.5">
                                     location_on
                                 </span>
-                                128 Cue Ball Lane,
+                                Ultimate Snooker and Pool arena , Steelcraft Buliding,10 Diagonal Road ,
                                 <br />
-                                West End, London
+                                Near Royal Enfield Service Centre and Wine Shop
                             </li>
                             <li className="flex gap-2 items-center">
                                 <span className="material-symbols-outlined text-primary text-lg">
                                     call
                                 </span>
-                                +44 (0) 20 1234 5678
+
+                                <a
+                                    href="tel:+918877333321"
+                                    className="hover:underline text-gray-400"
+                                >
+                                    +91 8877333321
+                                </a>
+
+                                <span>/</span>
+
+                                <a
+                                    href="tel:+918677859859"
+                                    className="hover:underline text-gray-400"
+                                >
+                                    86778 59859
+                                </a>
                             </li>
+
                             <li className="flex gap-2 items-center">
                                 <span className="material-symbols-outlined text-primary text-lg">
                                     mail
                                 </span>
-                                play@thebreakroom.com
+
+                                <a
+                                    href="mailto:ultimatesnookerarena@gmail.com"
+                                    className="hover:underline text-gray-400"
+                                >
+                                    ultimatesnookerarena@gmail.com
+                                </a>
                             </li>
+
                         </ul>
                     </div>
 

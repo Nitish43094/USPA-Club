@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
-
+import uspaLocation from "../assets/USPA Location.png"
+import { SiInstagram } from "react-icons/si";
 export default function Contact() {
     const [formData, setFormData] = useState({
         name: "",
@@ -158,7 +159,9 @@ export default function Contact() {
                                         Visit Us
                                     </h3>
                                     <p className="text-[#111813] dark:text-white font-medium leading-relaxed">
-                                        123 Green Baize Lane,<br />Snooker City, SC 90210
+                                        Ultimate Snooker and Pool arena , Steelcraft Buliding,10 Diagonal Road ,
+                                        <br />
+                                        Near Royal Enfield Service Centre and Wine Shop
                                     </p>
                                 </div>
                             </div>
@@ -173,7 +176,20 @@ export default function Contact() {
                                         Call Us
                                     </h3>
                                     <p className="text-[#111813] dark:text-white font-medium leading-relaxed hover:text-primary transition-colors cursor-pointer">
-                                        +1 (555) 019-2834
+                                        <a
+                                            href="tel:+918877333321"
+                                            className="hover:underline text-gray-700"
+                                        >
+                                            +91 8877333321
+                                        </a>
+
+                                        <span>/</span>
+                                        <a
+                                            href="tel:+918677859859"
+                                            className="hover:underline text-gray-700"
+                                        >
+                                            86778 59859
+                                        </a>
                                     </p>
                                     <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Mon-Fri, 9am - 10pm</p>
                                 </div>
@@ -188,8 +204,13 @@ export default function Contact() {
                                     <h3 className="text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wide mb-1">
                                         Email Us
                                     </h3>
-                                    <p className="text-[#111813] dark:text-white font-medium leading-relaxed hover:text-primary transition-colors cursor-pointer">
-                                        members@snookerclub.com
+                                    <p className="text-[#111813] dark:text-white font-medium leading-relaxed transition-colors cursor-pointer">
+                                        <a
+                                            href="mailto:ultimatesnookerarena@gmail.com"
+                                            className="cursor-pointer hover:underline"
+                                        >
+                                            ultimatesnookerarena@gmail.com
+                                        </a>
                                     </p>
                                 </div>
                             </div>
@@ -222,53 +243,68 @@ export default function Contact() {
                         </div>
 
                         {/* Map Placeholder */}
-                        <div className="relative w-full h-[240px] rounded-xl overflow-hidden border border-gray-200 dark:border-[#28392e] group cursor-pointer shadow-lg">
-                            <img
-                                alt="Stylized dark map view of Snooker City location"
-                                className="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500 scale-110 group-hover:scale-100"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrwUuaSvjnflKVRaf2UT_mx1zQ8dCO7ZGZXDOnsCVLk1ZpTlmPIOjNMfsYZcAMLljKkQ9UgKMRi72DQnkAFmEEORCg0lxBVEb-Qi7PgNZHYCsnWPBCrp9Vq0vnqR9stKJ2hDTrtcswZKntyxwmbobQm4V9E04PnUGSVOzaTAezarnkReXxYytMW01UVauzE-tnuPWiGgem4VNaZgc1acrvCGesysCbxBn35aPuf7p1gwqW_TNgHgCSejuCZC3Kz9dnFRRQJYjUpRQ7"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#102216] to-transparent pointer-events-none" />
+                        <a
+                            href="https://maps.app.goo.gl/vVt9mfWsE7RgG7eZ8?g_st=awb"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block"
+                        >
+                            <div className="relative w-full h-[240px] rounded-xl overflow-hidden border border-gray-200 dark:border-[#28392e] group cursor-pointer shadow-lg">
 
-                            {/* Custom Map Marker */}
-                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                                <div className="size-12 bg-primary rounded-full flex items-center justify-center text-[#102216] shadow-[0_0_20px_rgba(17,212,82,0.6)] animate-bounce">
-                                    <span className="material-symbols-outlined text-3xl">sports_bar</span>
-                                </div>
-                                <div className="mt-2 bg-[#152319] px-3 py-1 rounded-md border border-[#28392e] text-xs font-bold text-white shadow-lg">
-                                    We are here
-                                </div>
-                            </div>
+                                <img
+                                    alt="Stylized dark map view of Snooker City location"
+                                    className="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500 scale-110 group-hover:scale-100"
+                                    src={uspaLocation}
+                                />
 
-                            {/* Open in Maps Button */}
-                            <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <button className="bg-white dark:bg-[#152319] text-[#111813] dark:text-white text-xs font-bold py-2 px-4 rounded-lg shadow-md border border-gray-200 dark:border-[#28392e] flex items-center gap-2 hover:bg-gray-50 dark:hover:bg-[#0d1b11]">
-                                    <span>Open in Maps</span>
-                                    <span className="material-symbols-outlined text-[16px]">open_in_new</span>
-                                </button>
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#102216] to-transparent pointer-events-none" />
+
+                                {/* Custom Map Marker */}
+                                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center pointer-events-none">
+                                    <div className="size-12 bg-primary rounded-full flex items-center justify-center text-[#102216] shadow-[0_0_20px_rgba(17,212,82,0.6)] animate-bounce">
+                                        <span className="material-symbols-outlined text-3xl">
+                                            sports_bar
+                                        </span>
+                                    </div>
+                                    <div className="mt-2 bg-[#152319] px-3 py-1 rounded-md border border-[#28392e] text-xs font-bold text-white shadow-lg">
+                                        We are here
+                                    </div>
+                                </div>
+
+                                {/* Open in Maps Badge */}
+                                <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div className="bg-white dark:bg-[#152319] text-[#111813] dark:text-white text-xs font-bold py-2 px-4 rounded-lg shadow-md border border-gray-200 dark:border-[#28392e] flex items-center gap-2">
+                                        <span>Open in Maps</span>
+                                        <span className="material-symbols-outlined text-[16px]">
+                                            open_in_new
+                                        </span>
+                                    </div>
+                                </div>
+
                             </div>
-                        </div>
+                        </a>
+
 
                         {/* Social Links */}
                         <div className="flex gap-4 justify-center md:justify-start pt-2">
                             <a
-                                href="#"
+                                href="https://www.facebook.com/share/17iZAuA37y/"
                                 className="size-10 rounded-full bg-[#152319] border border-[#28392e] flex items-center justify-center text-white hover:bg-primary hover:text-[#102216] hover:border-primary transition-all duration-300"
                             >
                                 <span className="font-bold text-lg">f</span>
                             </a>
                             <a
-                                href="#"
+                                href="https://www.instagram.com/ultimatesnooker_poolarena?igsh=MTNhOGJsNHVsbXQ2cA%3D%3D&utm_source=qr"
                                 className="size-10 rounded-full bg-[#152319] border border-[#28392e] flex items-center justify-center text-white hover:bg-primary hover:text-[#102216] hover:border-primary transition-all duration-300"
                             >
-                                <span className="font-bold text-lg">ig</span>
+                                <span className="font-bold text-lg"><SiInstagram/></span>
                             </a>
-                            <a
+                            {/* <a
                                 href="#"
                                 className="size-10 rounded-full bg-[#152319] border border-[#28392e] flex items-center justify-center text-white hover:bg-primary hover:text-[#102216] hover:border-primary transition-all duration-300"
                             >
                                 <span className="font-bold text-lg">x</span>
-                            </a>
+                            </a> */}
                         </div>
                     </div>
                 </div>
