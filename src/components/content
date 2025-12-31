@@ -1,0 +1,90 @@
+{/* -- Origin Story Section -- */}
+            <section className="py-20 px-4 md:px-10 max-w-[1280px] mx-auto w-full">
+                <h2 className="text-3xl md:text-4xl font-bold leading-tight text-gray-900 dark:text-white mb-12">
+                    The Origin Story
+                </h2>
+
+                <div className="grid grid-cols-[40px_1fr] gap-x-6">
+                    {/* Timeline Item 1 */}
+                    <div className="flex flex-col items-center gap-1 pt-3">
+                        <div className="text-primary bg-black p-2 rounded-full border border-[#28392e] z-10">
+                            <span className="material-symbols-outlined">flag</span>
+                        </div>
+                        <div className="w-[2px] bg-black h-full grow -mt-1"></div>
+                    </div>
+
+                    <div className="flex flex-1 flex-col py-3 pb-10">
+                        <p className="text-gray-500 dark:text-gray-400 text-sm font-bold tracking-widest uppercase mb-1">
+                            1998
+                        </p>
+                        <h3 className="text-gray-900 dark:text-white text-xl font-bold leading-tight mb-2">
+                            Founded in a Basement
+                        </h3>
+                        <p className="text-gray-600 dark:text-gray-400 text-base">
+                            We started with just two second-hand tables and a passion for the sport. The goal was simple: provide a place where the game came first.
+                        </p>
+                    </div>
+
+                    {/* Timeline Item 2 */}
+                    <div className="flex flex-col items-center gap-1">
+                        <div className="w-[2px] bg-black h-4 -mb-1"></div>
+                        <div className="text-white bg-black p-2 rounded-full border border-[#28392e] z-10">
+                            <span className="material-symbols-outlined">emoji_events</span>
+                        </div>
+                        <div className="w-[2px] bg-black h-full grow -mt-1"></div>
+                    </div>
+
+                    <div className="flex flex-1 flex-col py-3 pb-10">
+                        <p className="text-gray-500 dark:text-gray-400 text-sm font-bold tracking-widest uppercase mb-1">
+                            2005
+                        </p>
+                        <h3 className="text-gray-900 dark:text-white text-xl font-bold leading-tight mb-2">
+                            First City Championship
+                        </h3>
+                        <p className="text-gray-600 dark:text-gray-400 text-base">
+                            Hosting our first major tournament put us on the map. Players from across the state came to challenge the local legends.
+                        </p>
+                    </div>
+
+                    {/* Timeline Item 3 */}
+                    <div className="flex flex-col items-center gap-1">
+                        <div className="w-[2px] bg-black h-4 -mb-1"></div>
+                        <div className="text-white bg-black p-2 rounded-full border border-[#28392e] z-10">
+                            <span className="material-symbols-outlined">storefront</span>
+                        </div>
+                        <div className="w-[2px] bg-black h-full grow -mt-1"></div>
+                    </div>
+
+                    <div className="flex flex-1 flex-col py-3 pb-10">
+                        <p className="text-gray-500 dark:text-gray-400 text-sm font-bold tracking-widest uppercase mb-1">
+                            2012
+                        </p>
+                        <h3 className="text-gray-900 dark:text-white text-xl font-bold leading-tight mb-2">
+                            The Grand Expansion
+                        </h3>
+                        <p className="text-gray-600 dark:text-gray-400 text-base">
+                            Moving to our current location allowed us to install 15 Riley Aristocrat tables and build a full-service lounge for our members.
+                        </p>
+                    </div>
+
+                    {/* Timeline Item 4 */}
+                    <div className="flex flex-col items-center gap-1 pb-3">
+                        <div className="w-[2px] bg-black h-4 -mb-1"></div>
+                        <div className="text-primary bg-black p-2 rounded-full border border-[#28392e] z-10">
+                            <span className="material-symbols-outlined">local_police</span>
+                        </div>
+                    </div>
+
+                    <div className="flex flex-1 flex-col py-3">
+                        <p className="text-gray-500 dark:text-gray-400 text-sm font-bold tracking-widest uppercase mb-1">
+                            2023
+                        </p>
+                        <h3 className="text-gray-900 dark:text-white text-xl font-bold leading-tight mb-2">
+                            National Recognition
+                        </h3>
+                        <p className="text-gray-600 dark:text-gray-400 text-base">
+                            Awarded "Best Snooker Hall" in the region. A testament to our commitment to maintaining professional standards.
+                        </p>
+                    </div>
+                </div>
+            </section>

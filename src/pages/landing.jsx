@@ -28,7 +28,7 @@ export default function Landing() {
                     </h1>
 
                     <p className="text-gray-200 xl:text-[1.3rem] md:text-xl max-w-2xl  font-normal leading-relaxed text-shadow">
-                        Experience the city's finest cuesports destination. Professional Star Xing Pai tables, upscale dining, and a community of true enthusiasts.
+                        Experience the city's finest cuesports destination. Apex and Sharma pool tables , upscale dining, and a community of true enthusiasts.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -36,18 +36,10 @@ export default function Landing() {
                             onClick={() => navigate("/about")}
                             className="
                                 relative overflow-hidden inline-flex items-center justify-center
-                                h-12 px-8 rounded-lg
-                                bg-yellow-400 text-[#102216] text-base font-bold
-                                transition-all duration-300 ease-out
-
-                                before:absolute before:inset-0
-                                before:bg-black
-                                before:translate-x-[-100%]
-                                before:transition-transform before:duration-300 before:ease-out
-                                hover:before:translate-x-0
-                            "
+                                h-12 px-8 rounded-lg bg-yellow-400 text-[#102216] text-base font-bold
+                                transition-all duration-300 ease-out hover:text-white hover:bg-black"
                         >
-                            <span className="relative z-10 transition-colors duration-300 hover:text-white">
+                            <span className="relative z-10 transition-colors duration-300">
                                 Learn More
                             </span>
                         </button>
@@ -70,7 +62,7 @@ export default function Landing() {
             </section>
 
             {/* ================= STATS ================= */}
-            <section className="bg-black border-y border-[#28392e] py-8">
+            {/* <section className="bg-black border-y border-[#28392e] py-8">
                 <div className="max-w-[1280px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
 
                     <div>
@@ -102,7 +94,7 @@ export default function Landing() {
                     </div>
 
                 </div>
-            </section>
+            </section> */}
             {/* -- Features Section -- */}
             <section className="py-20 px-4 md:px-10 max-w-[1280px] mx-auto w-full" id="amenities">
                 <div className="flex flex-col md:flex-row gap-12 items-start">
@@ -111,7 +103,7 @@ export default function Landing() {
                             Why Play With Us
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-                            We provide the best environment for both casual players and serious competitors. From our meticulously maintained cloth to our sound-dampened VIP rooms, every detail is designed for the perfect break.
+                            We offer an exceptional environment for both casual players and serious competitors. From meticulously maintained cloth to sound-dampened rooms, every detail is crafted to ensure the perfect break.
                         </p>
                         <Link
                             to="/gallery"
@@ -130,8 +122,8 @@ export default function Landing() {
                                 <span className="material-symbols-outlined">table_restaurant</span>
                             </div>
                             <div>
-                                <h3 className="text-lg font-bold mb-2">Professional Tables</h3>
-                                <p className="text-sm text-gray-500 dark:text-gray-400">Play on match-grade Star Xing Pai tables, heated and maintained daily for championship roll.</p>
+                                <h3 className="text-lg font-bold mb-2">Professional-Grade Equipment</h3>
+                                <p className="text-sm text-gray-500 dark:text-gray-400">Play on match-grade Apex and Sharma pool tables, heated and maintained daily for championship roll.</p>
                             </div>
                         </div>
                         <div className="rounded-xl border border-gray-200 dark:border-[#28392e] bg-white dark:bg-[#152319] p-6 flex flex-col gap-4 hover:border-primary/50 transition-colors group">
@@ -139,8 +131,8 @@ export default function Landing() {
                                 <span className="material-symbols-outlined">local_bar</span>
                             </div>
                             <div>
-                                <h3 className="text-lg font-bold mb-2">Full Bar &amp; Kitchen</h3>
-                                <p className="text-sm text-gray-500 dark:text-gray-400">Enjoy a curated menu of craft cocktails, draft beers, and gourmet bites while you play.</p>
+                                <h3 className="text-lg font-bold mb-2">Spacious, Elegant Enviroment</h3>
+                                <p className="text-sm text-gray-500 dark:text-gray-400">Perfect for focused practice, social matches, and gourmet bites while you play.</p>
                             </div>
                         </div>
                         <div className="rounded-xl border border-gray-200 dark:border-[#28392e] bg-white dark:bg-[#152319] p-6 flex flex-col gap-4 hover:border-primary/50 transition-colors group">
@@ -148,8 +140,8 @@ export default function Landing() {
                                 <span className="material-symbols-outlined">meeting_room</span>
                             </div>
                             <div>
-                                <h3 className="text-lg font-bold mb-2">Private VIP Rooms</h3>
-                                <p className="text-sm text-gray-500 dark:text-gray-400">Exclusive sound-proof rooms equipped with 85" TVs and private service for your events.</p>
+                                <h3 className="text-lg font-bold mb-2">Optimized Lighting & Ambiance</h3>
+                                <p className="text-sm text-gray-500 dark:text-gray-400">Tailored for peak performance.</p>
                             </div>
                         </div>
                         <div className="rounded-xl border border-gray-200 dark:border-[#28392e] bg-white dark:bg-[#152319] p-6 flex flex-col gap-4 hover:border-primary/50 transition-colors group">
@@ -313,7 +305,7 @@ export default function Landing() {
                     {/* Card 1 */}
                     <div className="flex flex-col gap-6 rounded-2xl border border-gray-200 dark:border-[#28392e] bg-white dark:bg-[#152319] p-8 hover:-translate-y-1 transition-all duration-300">
                         <div>
-                            <h3 className="text-lg font-bold mb-1">Casual</h3>
+                            <h3 className="text-lg font-bold mb-1">Basic</h3>
                             <p className="text-sm text-gray-500 dark:text-gray-400">
                                 For the occasional player
                             </p>
@@ -321,10 +313,10 @@ export default function Landing() {
 
                         <div className="flex items-baseline gap-1">
                             <span className="text-4xl font-black text-gray-900 dark:text-white">
-                                $15
+                                &#x20B9;2999
                             </span>
                             <span className="text-gray-500 dark:text-gray-400 font-medium">
-                                / hour
+                                / month
                             </span>
                         </div>
                         <button
@@ -347,19 +339,19 @@ export default function Landing() {
                                 <span className="material-symbols-outlined text-primary text-[20px]">
                                     check
                                 </span>
-                                Standard table rates
+                                Standard table
                             </li>
                             <li className="flex gap-3 text-sm text-gray-600 dark:text-gray-300">
                                 <span className="material-symbols-outlined text-primary text-[20px]">
                                     check
                                 </span>
-                                Open seating
+                                1 hour solo practice.
                             </li>
                             <li className="flex gap-3 text-sm text-gray-600 dark:text-gray-300">
                                 <span className="material-symbols-outlined text-primary text-[20px]">
                                     check
                                 </span>
-                                Bar &amp; Kitchen access
+                                Play in between 10 To 12 PM
                             </li>
                         </ul>
                     </div>
@@ -371,7 +363,7 @@ export default function Landing() {
                         </div>
 
                         <div>
-                            <h3 className="text-lg font-bold mb-1">Club Member</h3>
+                            <h3 className="text-lg font-bold mb-1">Advance Member</h3>
                             <p className="text-sm text-gray-500 dark:text-gray-400">
                                 For the regular enthusiast
                             </p>
@@ -379,14 +371,14 @@ export default function Landing() {
 
                         <div className="flex items-baseline gap-1">
                             <span className="text-4xl font-black text-gray-900 dark:text-white">
-                                $50
+                                &#x20B9;5999
                             </span>
                             <span className="text-gray-500 dark:text-gray-400 font-medium">
                                 / month
                             </span>
                         </div>
                         <Link to="/contact">
-                            <button className="w-full rounded-lg h-12 bg-primary hover:bg-[#0eb846] text-[#102216] font-bold text-sm transition-colors shadow-lg shadow-primary/20">
+                            <button className="w-full rounded-lg h-12 bg-primary hover:text-white hover:bg-black text-[#102216] font-bold text-sm transition-colors shadow-lg shadow-primary/20">
                                 Join Now
                             </button>
                         </Link>
@@ -395,36 +387,36 @@ export default function Landing() {
                                 <span className="material-symbols-outlined text-primary text-[20px]">
                                     check
                                 </span>
-                                <span className="font-bold text-gray-900 dark:text-white">
+                                {/* <span className="font-bold text-gray-900 dark:text-white">
                                     50% off
-                                </span>{" "}
-                                table rates
+                                </span>{" "} */}
+                                Standard table
                             </li>
                             <li className="flex gap-3 text-sm text-gray-600 dark:text-gray-300">
                                 <span className="material-symbols-outlined text-primary text-[20px]">
                                     check
                                 </span>
-                                Priority online booking
+                                Play 2 hour in happy hour 2.
                             </li>
                             <li className="flex gap-3 text-sm text-gray-600 dark:text-gray-300">
                                 <span className="material-symbols-outlined text-primary text-[20px]">
                                     check
                                 </span>
-                                Private locker access
+                                Valid from 11 AM to 4 PM
                             </li>
-                            <li className="flex gap-3 text-sm text-gray-600 dark:text-gray-300">
+                            {/* <li className="flex gap-3 text-sm text-gray-600 dark:text-gray-300">
                                 <span className="material-symbols-outlined text-primary text-[20px]">
                                     check
                                 </span>
                                 1 Guest pass per month
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
 
                     {/* Card 3 */}
                     <div className="flex flex-col gap-6 rounded-2xl border border-gray-200 dark:border-[#28392e] bg-white dark:bg-[#152319] p-8 hover:-translate-y-1 transition-all duration-300">
                         <div>
-                            <h3 className="text-lg font-bold mb-1">Pro League</h3>
+                            <h3 className="text-lg font-bold mb-1">Ultimate Member</h3>
                             <p className="text-sm text-gray-500 dark:text-gray-400">
                                 For the serious competitor
                             </p>
@@ -432,7 +424,7 @@ export default function Landing() {
 
                         <div className="flex items-baseline gap-1">
                             <span className="text-4xl font-black text-gray-900 dark:text-white">
-                                $120
+                                &#x20B9;8999
                             </span>
                             <span className="text-gray-500 dark:text-gray-400 font-medium">
                                 / month
@@ -451,26 +443,26 @@ export default function Landing() {
                                 <span className="font-bold text-gray-900 dark:text-white">
                                     Unlimited
                                 </span>{" "}
-                                table time (off-peak)
+                                Play
                             </li>
                             <li className="flex gap-3 text-sm text-gray-600 dark:text-gray-300">
                                 <span className="material-symbols-outlined text-primary text-[20px]">
                                     check
                                 </span>
-                                League entry fees included
+                                Solo Practic (10am to 12pm)
                             </li>
                             <li className="flex gap-3 text-sm text-gray-600 dark:text-gray-300">
                                 <span className="material-symbols-outlined text-primary text-[20px]">
                                     check
                                 </span>
-                                Exclusive Pro Shop discounts
+                                Pre-booking Facility
                             </li>
-                            <li className="flex gap-3 text-sm text-gray-600 dark:text-gray-300">
+                            {/* <li className="flex gap-3 text-sm text-gray-600 dark:text-gray-300">
                                 <span className="material-symbols-outlined text-primary text-[20px]">
                                     check
                                 </span>
                                 VIP Room access
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
                 </div>
@@ -498,9 +490,7 @@ export default function Landing() {
                         {/* Testimonial 1 */}
                         <div className="p-6 rounded-xl bg-white dark:bg-[#152319] shadow-sm flex flex-col gap-4">
                             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                                "The quality of the tables here is unmatched. I've played all over
-                                the city, but The Break Room is the only place where the conditions
-                                are truly professional standard."
+                                "Absolutely loved the arena! The space was well-maintained, vibrant, and perfect for our game. Big shoutout to the owner, Shushant, for being so welcoming and helpful throughout. Will definitely be coming back!"
                             </p>
 
                             <div className="flex items-center gap-3 mt-auto">
@@ -512,8 +502,8 @@ export default function Landing() {
                                     />
                                 </div>
                                 <div>
-                                    <div className="font-bold text-sm">David Chen</div>
-                                    <div className="text-xs text-gray-500">Member since 2021</div>
+                                    <div className="font-bold text-sm">Shanti Bhushan</div>
+                                    <div className="text-xs text-gray-500">Member since 2025</div>
                                 </div>
                             </div>
                         </div>
@@ -521,9 +511,8 @@ export default function Landing() {
                         {/* Testimonial 2 */}
                         <div className="p-6 rounded-xl bg-white dark:bg-[#152319] shadow-sm flex flex-col gap-4">
                             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                                "It's not just a pool hall, it's a vibe. The cocktails are fantastic
-                                and the staff actually knows the game. Perfect for a Friday night
-                                out."
+                                "Perfect Place To Enjoy A Game , Whether You Are A Beginner Or A PRO.
+                                    Highly Recommended 🎱 …"
                             </p>
 
                             <div className="flex items-center gap-3 mt-auto">
@@ -535,7 +524,9 @@ export default function Landing() {
                                     />
                                 </div>
                                 <div>
-                                    <div className="font-bold text-sm">Sarah Jenkins</div>
+                                    <div className="font-bold text-sm">
+                                        sweta kumari
+                                    </div>
                                     <div className="text-xs text-gray-500">Casual Player</div>
                                 </div>
                             </div>
@@ -544,9 +535,7 @@ export default function Landing() {
                         {/* Testimonial 3 */}
                         <div className="p-6 rounded-xl bg-white dark:bg-[#152319] shadow-sm flex flex-col gap-4">
                             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                                "Joined the league last month and haven't looked back. Great
-                                community, competitive but friendly matches, and the atmosphere is
-                                always on point."
+                                "Fantastic snooker club! The tables are well-maintained, the lighting is perfect, and the atmosphere is just right for both casual and serious players. The staff is friendly and always ready to help. Whether you're looking to practice, compete, or just have a fun game with friends, this place delivers. Highly recommend!"
                             </p>
 
                             <div className="flex items-center gap-3 mt-auto">
@@ -558,8 +547,8 @@ export default function Landing() {
                                     />
                                 </div>
                                 <div>
-                                    <div className="font-bold text-sm">Marcus Johnson</div>
-                                    <div className="text-xs text-gray-500">League Player</div>
+                                    <div className="font-bold text-sm">SHEIKH ASAD</div>
+                                    <div className="text-xs text-gray-500">Casual Player</div>
                                 </div>
                             </div>
                         </div>

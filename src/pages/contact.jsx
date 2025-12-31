@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import toast from "react-hot-toast";
 import uspaLocation from "../assets/USPA Location.png"
 import { SiInstagram } from "react-icons/si";
+import logo from '../assets/logo.png'
 export default function Contact() {
     const [formData, setFormData] = useState({
         name: "",
@@ -86,12 +87,13 @@ export default function Contact() {
 
                                 <label className="flex flex-col gap-2">
                                     <span className="text-sm font-bold text-[#111813] dark:text-white uppercase tracking-wider">
-                                        Phone (Optional)
+                                        Phone
                                     </span>
                                     <input
                                         name="phone"
                                         value={formData.phone}
                                         onChange={handleChange}
+                                        required
                                         className="w-full rounded-lg border border-gray-300 dark:border-[#28392e] bg-gray-50 dark:bg-[#0d1b11] text-[#111813] dark:text-white h-12 px-4 focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-gray-400"
                                         placeholder="+1 (555) 000-0000"
                                         type="tel"
@@ -112,6 +114,7 @@ export default function Contact() {
                                         <option>Table Booking</option>
                                         <option>Membership Application</option>
                                         <option>Event Hosting</option>
+                                        <option>Products Inquiry</option>
                                     </select>
                                 </label>
 
@@ -133,7 +136,7 @@ export default function Contact() {
                                 <div className="pt-2">
                                     <button
                                         type="submit"
-                                        className="w-full md:w-auto px-8 h-12 bg-yellow-400 hover:bg-[#0eb846] text-[#102216] font-bold rounded-lg transition-all transform active:scale-95 shadow-[0_0_20px_rgba(17,212,82,0.4)] hover:shadow-[0_0_30px_rgba(17,212,82,0.6)] flex items-center justify-center gap-2"
+                                        className="w-full md:w-auto px-8 h-12 bg-yellow-400 text-[#102216] font-bold rounded-lg transition-all transform active:scale-95 duration-300 ease-out hover:text-white hover:bg-black flex items-center justify-center gap-2"
                                     >
                                         <span>Send Message</span>
                                         <span className="material-symbols-outlined text-[20px] font-bold">send</span>
@@ -227,11 +230,11 @@ export default function Contact() {
                                     <div className="flex flex-col gap-1">
                                         <div className="flex justify-between w-full min-w-[180px] gap-4">
                                             <span className="text-[#111813] dark:text-white font-medium">Mon - Thu</span>
-                                            <span className="text-gray-500 dark:text-gray-400">2 PM - 12 AM</span>
+                                            <span className="text-gray-500 dark:text-gray-400">12 PM - 11 PM</span>
                                         </div>
                                         <div className="flex justify-between w-full min-w-[180px] gap-4">
                                             <span className="text-[#111813] dark:text-white font-medium">Fri - Sat</span>
-                                            <span className="text-gray-500 dark:text-gray-400">2 PM - 2 AM</span>
+                                            <span className="text-gray-500 dark:text-gray-400">12 PM - 11 PM</span>
                                         </div>
                                         <div className="flex justify-between w-full min-w-[180px] gap-4">
                                             <span className="text-[#111813] dark:text-white font-medium">Sunday</span>
@@ -247,7 +250,7 @@ export default function Contact() {
                             href="https://maps.app.goo.gl/vVt9mfWsE7RgG7eZ8?g_st=awb"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="block"
+                            className="block select-none"
                         >
                             <div className="relative w-full h-[240px] rounded-xl overflow-hidden border border-gray-200 dark:border-[#28392e] group cursor-pointer shadow-lg">
 
@@ -261,10 +264,8 @@ export default function Contact() {
 
                                 {/* Custom Map Marker */}
                                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center pointer-events-none">
-                                    <div className="size-12 bg-primary rounded-full flex items-center justify-center text-[#102216] shadow-[0_0_20px_rgba(17,212,82,0.6)] animate-bounce">
-                                        <span className="material-symbols-outlined text-3xl">
-                                            sports_bar
-                                        </span>
+                                    <div className="size-12 bg-black rounded-full flex items-center justify-center text-[#102216] animate-bounce">
+                                        <img src={logo} alt="/logo" />
                                     </div>
                                     <div className="mt-2 bg-[#152319] px-3 py-1 rounded-md border border-[#28392e] text-xs font-bold text-white shadow-lg">
                                         We are here
@@ -297,7 +298,7 @@ export default function Contact() {
                                 href="https://www.instagram.com/ultimatesnooker_poolarena?igsh=MTNhOGJsNHVsbXQ2cA%3D%3D&utm_source=qr"
                                 className="size-10 rounded-full bg-[#152319] border border-[#28392e] flex items-center justify-center text-white hover:bg-primary hover:text-[#102216] hover:border-primary transition-all duration-300"
                             >
-                                <span className="font-bold text-lg"><SiInstagram/></span>
+                                <span className="font-bold text-lg"><SiInstagram /></span>
                             </a>
                             {/* <a
                                 href="#"

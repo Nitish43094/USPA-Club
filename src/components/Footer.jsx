@@ -3,6 +3,7 @@ import { FaFacebook } from "react-icons/fa";
 import { SiInstagram } from "react-icons/si";
 import { FiTwitter } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import logo from '../assets/logo.png'
 const Footer = () => {
     return (
         <footer
@@ -15,10 +16,11 @@ const Footer = () => {
                     {/* Brand */}
                     <div className="flex flex-col gap-4">
                         <div className="flex items-center gap-2 text-white mb-2">
-                            <span className="material-symbols-outlined text-primary text-2xl">
+                            <img src={logo} alt="logo" className="w-10 bg-gray-700 rounded-full select-none" />
+                            {/* <span className="material-symbols-outlined text-primary text-2xl">
                                 playing_cards
-                            </span>
-                            <span className="font-bold text-lg">USPA Club</span>
+                            </span> */}
+                            <span className="font-bold text-lg select-none">US<span className="text-yellow-500">&</span>PA Club</span>
                         </div>
 
                         <p className="text-gray-400 leading-relaxed">
@@ -94,17 +96,17 @@ const Footer = () => {
                         <h4 className="text-white font-bold mb-4">Opening Hours</h4>
                         <ul className="flex flex-col gap-2 text-gray-400">
                             <li className="flex justify-between">
-                                <span>Mon - Thu</span>
-                                <span className="text-white">12:00 PM - 12:00 AM</span>
+                                <span>Mon - Sun</span>
+                                <span className="text-white">12:00 PM - 11:00 PM</span>
                             </li>
-                            <li className="flex justify-between">
+                            {/* <li className="flex justify-between">
                                 <span>Fri - Sat</span>
-                                <span className="text-white">12:00 PM - 02:00 AM</span>
+                                <span className="text-white">12:00 PM - 11:00 PM</span>
                             </li>
                             <li className="flex justify-between">
                                 <span>Sunday</span>
                                 <span className="text-white">12:00 PM - 11:00 PM</span>
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
 
@@ -123,7 +125,7 @@ const Footer = () => {
                                 },
                                 {
                                     name: "Privacy Policy",
-                                    link: "#"
+                                    link: "https://www.termsfeed.com/live/92e5c5bf-d85e-4412-8ce9-3e56efbe8b7e"
                                 }
                             ].map((data, index) => (
                                 <li key={index}>
@@ -141,8 +143,8 @@ const Footer = () => {
 
                 {/* Bottom Bar */}
                 <div className="pt-8 border-t border-[#28392e] flex flex-col md:flex-row justify-between gap-4 text-xs text-gray-500">
-                    <p>© 2023 USPA Club. All rights reserved.</p>
-                    <p>Designed By Nitish Kushwaha.</p>
+                    <p>© 2025 US&PA Club. All rights reserved.</p>
+                    {/* <p>Designed By Nitish Kushwaha.</p> */}
                 </div>
             </div>
         </footer>

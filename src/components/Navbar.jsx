@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
+import logo from '../assets/logo.png'
 
 // ["Home", "Amenities", "Membership", "Events", "Contact"]
 const section = [
@@ -21,6 +22,10 @@ const section = [
         link: "/Event"
     },
     {
+        name: "Products",
+        link: "/products"
+    },
+    {
         name: "Gallery",
         link: "/gallery"
     },
@@ -39,10 +44,11 @@ const Navbar = () => {
                 <a href="/">
                     <div className="flex items-center gap-4">
                         <div className="text-yellow-500">
-                            <span className="material-symbols-outlined text-3xl hidden sm:block">playing_cards</span>
+                            <img src={logo} alt="logo" className="w-10 bg-black rounded-full select-none" />
+                            {/* <span className="material-symbols-outlined text-3xl hidden sm:block">playing_cards</span> */}
                         </div>
-                        <h2 className="text-lg font-bold hidden sm:block">
-                            USPA Club
+                        <h2 className="text-lg font-bold hidden sm:block select-none">
+                            US<span className="text-yellow-500">&</span>PA Club
                         </h2>
                     </div>
                 </a>
@@ -65,24 +71,15 @@ const Navbar = () => {
                     <button
                         className="
                         hidden md:block relative overflow-hidden h-10 px-5 
-                        bg-yellow-400 text-[#102216] font-bold rounded-lg
-                        shadow
-                        transition-all duration-300
-                        before:absolute before:inset-0 
-                        before:bg-black before:translate-x-[-100%]
-                        before:transition-transform before:duration-300
-                        hover:before:translate-x-0
-                        before:z-0
+                        bg-yellow-400 text-[#102216] font-bold rounded-lg shadow
+                        transition-all duration-300 ease-out hover:text-white hover:bg-black 
                     "
                         onClick={() => toast.success('Coming Soon...')}
                     >
-                        <span className="relative z-10 hover:text-white">
-                            Register Now
+                        <span className="relative z-10">
+                            Table Book
                         </span>
                     </button>
-
-
-
 
                     {/* Mobile Menu Button */}
                     <button
@@ -119,7 +116,7 @@ const Navbar = () => {
                             setOpen(false);
                         }}
                     >
-                        Register Now
+                        Table Book
                     </button>
                 </nav>
             </div>

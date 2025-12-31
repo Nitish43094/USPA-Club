@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import toast from "react-hot-toast";
-
+import Calendar from '../components/Calendar'
 const Event = () => {
     const [selectedFilter, setSelectedFilter] = useState("all");
     const [searchQuery, setSearchQuery] = useState("");
-    const [currentMonth, setCurrentMonth] = useState("October 2024");
-
     // Countdown timer state
     const [timeLeft, setTimeLeft] = useState({
         days: 12,
@@ -41,22 +39,22 @@ const Event = () => {
     const tournaments = [
         {
             id: 1,
-            date: { month: "Oct", day: "15" },
+            date: { month: "Dec", day: "15" },
             title: "Pro-Am Open Championship",
             subtitle: "Single Elimination • Best of 7 Frames",
-            prize: "$5,000 Prize",
-            entry: "$50 Entry",
+            prize: "5,000 Prize",
+            entry: "50 Entry",
             time: "10:00 AM",
             status: "Open",
             statusColor: "green"
         },
         {
             id: 2,
-            date: { month: "Oct", day: "20" },
+            date: { month: "Dec", day: "20" },
             title: "Amateur Sunday Swiss",
             subtitle: "Swiss Format • 5 Rounds Guaranteed",
             prize: "Trophy + Gear",
-            entry: "$25 Entry",
+            entry: "25 Entry",
             time: "12:00 PM",
             status: "Filling Fast",
             statusColor: "yellow"
@@ -86,16 +84,16 @@ const Event = () => {
                             Winter Cup 2024
                         </h1>
                         <h2 className="text-gray-200 text-lg font-normal leading-relaxed max-w-xl drop-shadow-md">
-                            The biggest cue sports event of the year is here. Compete with the best for a grand prize pool of $5,000. Registration closes soon.
+                            The biggest cue sports event of the year is here. Compete with the best for a grand prize pool of &#x20B9;5,000. Registration closes soon.
                         </h2>
                         <div className="flex flex-wrap gap-4 mt-4">
                             <button
-                            onClick={()=> toast.success("Comming Soon...")}
-                            className="h-12 px-6 bg-yellow-400 hover:bg-[#0eb846] text-[#102216] text-base font-bold rounded-lg transition-all shadow-[0_0_20px_rgba(17,212,82,0.4)] hover:shadow-[0_0_30px_rgba(17,212,82,0.6)]">
-                                Register Now
+                                onClick={() => toast.success("Comming Soon...")}
+                                className="h-12 px-6 bg-yellow-400 text-[#102216] text-base font-bold rounded-lg duration-300 ease-out hover:text-white hover:bg-black">
+                                Table Book
                             </button>
-                            <button onClick={()=> toast.success("Comming Soon...")}
-                            className="h-12 px-6 bg-[#28392e]/80 hover:bg-[#28392e] backdrop-blur-sm border border-white/10 text-white text-base font-bold rounded-lg transition-colors">
+                            <button onClick={() => toast.success("Comming Soon...")}
+                                className="h-12 px-6 bg-[#28392e]/80 hover:bg-[#28392e] backdrop-blur-sm border border-white/10 text-white text-base font-bold rounded-lg transition-colors">
                                 View Details
                             </button>
                         </div>
@@ -143,8 +141,8 @@ const Event = () => {
                                         key={filter.id}
                                         onClick={() => setSelectedFilter(filter.id)}
                                         className={`h-9 px-4 rounded-lg transition-colors ${selectedFilter === filter.id
-                                                ? "bg-yellow-400 text-[#102216] font-bold"
-                                                : "bg-[#28392e] hover:bg-[#344a3c] text-white font-medium"
+                                            ? "bg-yellow-400 text-[#102216] font-bold"
+                                            : "bg-[#28392e] hover:bg-[#344a3c] text-white font-medium"
                                             }`}
                                     >
                                         {filter.label}
@@ -200,8 +198,8 @@ const Event = () => {
                                             </div>
                                             <span
                                                 className={`px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wide ${tournament.statusColor === "green"
-                                                        ? "bg-green-900/30 text-green-400 border border-green-800"
-                                                        : "bg-yellow-900/30 text-yellow-400 border border-yellow-800"
+                                                    ? "bg-green-900/30 text-green-400 border border-green-800"
+                                                    : "bg-yellow-900/30 text-yellow-400 border border-yellow-800"
                                                     }`}
                                             >
                                                 {tournament.status}
@@ -212,13 +210,13 @@ const Event = () => {
                                                 <span className="material-symbols-outlined text-yellow-400 text-[18px]">
                                                     emoji_events
                                                 </span>{" "}
-                                                {tournament.prize}
+                                                {tournament.id == 1 ? (<span className="text-[17px]">&#x20B9;</span>) : ""}{tournament.prize}
                                             </span>
                                             <span className="text-gray-300 font-medium flex items-center gap-1.5 bg-[#0d1b11] px-2 py-1 rounded">
                                                 <span className="material-symbols-outlined text-gray-400 text-[18px]">
                                                     payments
                                                 </span>{" "}
-                                                {tournament.entry}
+                                                <span className="text-[17px]">&#x20B9;</span>{tournament.entry}
                                             </span>
                                             <span className="text-gray-300 font-medium flex items-center gap-1.5 bg-[#0d1b11] px-2 py-1 rounded">
                                                 <span className="material-symbols-outlined text-gray-400 text-[18px]">
@@ -229,8 +227,8 @@ const Event = () => {
                                         </div>
                                     </div>
                                     <div className="flex items-center sm:self-center pt-2 sm:pt-0">
-                                        <button onClick={()=> toast.success("Comming Soon...")}
-                                        className="w-full sm:w-auto bg-yellow-400 hover:bg-[#0eb846] text-[#102216] font-bold py-2.5 px-6 rounded-lg text-sm transition-all shadow-lg shadow-yellow-400/20">
+                                        <button onClick={() => toast.success("Comming Soon...")}
+                                            className="w-full sm:w-auto bg-yellow-400 transition-all duration-300 ease-out hover:text-white hover:bg-black text-[#102216] font-bold py-2.5 px-6 rounded-lg text-sm shadow-lg shadow-yellow-400/20">
                                             Register
                                         </button>
                                     </div>
@@ -252,7 +250,7 @@ const Event = () => {
                                     className="w-full sm:w-48 bg-cover bg-center min-h-[140px]"
                                     style={{
                                         backgroundImage:
-                                            "linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuChIWiX6_pQDj-of5iA41vo9jG5DBOE4191DvS4WAncK-RHxgf1SukUR5MgbQy5X8lj3bPYq-mYeaC7OXC9OjvUyvfrZypPxALXZlgw49ZTx8ZbWekC59U3dlJFT3rTc4CEvXhQ49_E9WXWo4j1LvZvwaiuR2zN9-REAKb5iwt_-NmVvtrVH5_b1ysIU9FQSMNI0dNoNCuZWAudmDydxtZN_YYvn7xzCenehIZdLVLFMwQK4iywJxOoBs3iB7m2zjdbWD5PZbnZf3ka')",
+                                            "linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuBniC9RyfauBn1ofO2m3nI40zrbMCvNKjeNCUjCrkK7mzhqFgJYj_xGd32U42xSyt0R_KWXo_pJ6wiq_vmOtYSoTXlQEpXUtsyEgOLv5_yBJqH0w53A7eAToeOBDUqmy9p9IKS20gYS2eWma6I5KxmY94KWPdiL-jwsg-8VpwOd18evolXPu-msSGY5coZGBKjw3xjIlqWAK7w9H3VKQxT2lOCZ78RwCUZTKUU9UcQrQSXIw3rBlF5SxsjvHOIHQJGHAvwGmpqUz4Mm')",
                                     }}
                                 ></div>
                                 <div className="flex-1 bg-[#152319] p-5 flex flex-col justify-between">
@@ -288,8 +286,8 @@ const Event = () => {
                                                 +24
                                             </div>
                                         </div>
-                                        <button onClick={()=> toast.success("Comming Soon...")}
-                                        className="text-yellow-400 hover:text-[#0eb846] text-sm font-bold transition-colors flex items-center gap-1">
+                                        <button onClick={() => toast.success("Comming Soon...")}
+                                            className="text-yellow-400 hover:text-[#0eb846] text-sm font-bold transition-colors flex items-center gap-1">
                                             View Leaderboard{" "}
                                             <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
                                         </button>
@@ -302,54 +300,7 @@ const Event = () => {
                     {/* Right Column: Sidebar */}
                     <div className="lg:col-span-4 flex flex-col gap-8">
                         {/* Calendar Widget */}
-                        <div className="bg-[#152319] rounded-xl border border-[#28392e] p-5">
-                            <div className="flex items-center justify-between mb-4">
-                                <h4 className="text-white font-bold text-lg">{currentMonth}</h4>
-                                <div className="flex gap-1">
-                                    <button className="p-1 rounded hover:bg-[#28392e] text-gray-400 hover:text-white transition-colors">
-                                        <span className="material-symbols-outlined">chevron_left</span>
-                                    </button>
-                                    <button className="p-1 rounded hover:bg-[#28392e] text-gray-400 hover:text-white transition-colors">
-                                        <span className="material-symbols-outlined">chevron_right</span>
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grid grid-cols-7 gap-1 text-center mb-2">
-                                {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map((day) => (
-                                    <div key={day} className="text-xs font-medium text-gray-500">
-                                        {day}
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="grid grid-cols-7 gap-1 text-center text-sm">
-                                {/* Previous Month */}
-                                <div className="py-2 text-gray-700">29</div>
-                                <div className="py-2 text-gray-700">30</div>
-                                {/* Current Month */}
-                                {Array.from({ length: 26 }, (_, i) => i + 1).map((day) => (
-                                    <div
-                                        key={day}
-                                        className={`py-2 rounded cursor-pointer transition-colors ${day === 15
-                                                ? "bg-yellow-400 text-[#102216] font-bold shadow-lg shadow-yellow-400/20"
-                                                : day === 20
-                                                    ? "bg-[#28392e] text-white font-bold border border-yellow-400/30"
-                                                    : "text-gray-300 hover:bg-[#28392e]"
-                                            }`}
-                                    >
-                                        {day}
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="mt-4 flex flex-col gap-2">
-                                <div className="flex items-center gap-2 text-xs text-gray-400">
-                                    <div className="w-2 h-2 rounded-full bg-yellow-400"></div> Major Tournament
-                                </div>
-                                <div className="flex items-center gap-2 text-xs text-gray-400">
-                                    <div className="w-2 h-2 rounded-full bg-[#28392e] border border-yellow-400/30"></div> League Match
-                                </div>
-                            </div>
-                        </div>
-
+                        <Calendar />
                         {/* Special Event Promo */}
                         <div className="relative rounded-xl overflow-hidden min-h-[200px] flex flex-col justify-end p-5 group">
                             <div
@@ -367,8 +318,8 @@ const Event = () => {
                                 <p className="text-gray-300 text-xs mt-1 mb-3">
                                     Learn from the world champion in this exclusive 3-hour session.
                                 </p>
-                                <button onClick={()=> toast.success("Comming Soon...")}
-                                className="w-full bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white text-xs font-bold py-2 rounded transition-colors">
+                                <button onClick={() => toast.success("Comming Soon...")}
+                                    className="w-full bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white text-xs font-bold py-2 rounded transition-colors">
                                     Book Your Spot
                                 </button>
                             </div>

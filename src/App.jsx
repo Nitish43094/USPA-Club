@@ -8,6 +8,7 @@ import Event from './pages/event'
 import ClubFaci from './pages/clubfaci'
 import Gallery from './pages/gallery'
 import Contact from './pages/contact'
+import Products from './pages/products'
 function App() {
   return (
     <div>
@@ -17,9 +18,11 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path='/book' element={<Book />} />
         <Route path='/event' element={<Event />} />
+        <Route path='/products' element={<Products />} />
         <Route path='/facilities' element={<ClubFaci />} />
         <Route path='/gallery' element={<Gallery />} />
         <Route path='/contact' element={<Contact />} />
+        {/* <Route path='/PrivacyPolicy' element={<PrivacyPolicy />} /> */}
       </Routes>
       <Footer />
     </div>

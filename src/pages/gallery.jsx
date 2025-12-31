@@ -200,23 +200,16 @@ export default function Gallery() {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
 
                         {/* Learn More Button */}
-                        <button onClick={() => navigate("/about")}
+                        <button
+                            onClick={() => navigate("/about")}
                             className="
                             relative overflow-hidden
                             h-12 px-8 rounded-lg
                             bg-yellow-400 text-[#102216] text-base font-bold
-                            transition-all duration-300 ease-out
-
-                            before:absolute before:inset-0
-                            before:bg-black
-                            before:translate-x-[-100%]
-                            before:transition-transform before:duration-300
-                            hover:before:translate-x-0
-
-                            hover:shadow-[0_0_30px_rgba(17,212,82,0.6)]
+                            transition-all duration-300 ease-out hover:text-white hover:bg-black
                             "
                         >
-                            <span className="relative z-10 transition-colors duration-300 hover:text-white">
+                            <span className="relative z-10 transition-colors duration-300">
                                 Learn More
                             </span>
                         </button>
@@ -232,12 +225,8 @@ export default function Gallery() {
                             transition-all duration-300 ease-out
 
                             before:absolute before:inset-0
-                            before:bg-yellow-400
                             before:translate-x-[-100%]
-                            before:transition-transform before:duration-300
-                            hover:before:translate-x-0
-
-                            hover:text-black"
+                            hover:text-black hover:bg-yellow-500"
                         >
                             <span className="relative z-10 transition-colors duration-300">
                                 View Membership

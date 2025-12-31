@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import teamImg1 from '../assets/teamImage1.jpeg'
+import teamImg2 from '../assets/mohit-manik.jpeg'
+import teamImg3 from '../assets/aman-kumar.jpeg'
 import { useNavigate } from "react-router-dom";
 import Counter from "../components/Counter";
 const About = () => {
@@ -70,95 +72,6 @@ const About = () => {
             </section>
 
             {/* -- Origin Story Section -- */}
-            <section className="py-20 px-4 md:px-10 max-w-[1280px] mx-auto w-full">
-                <h2 className="text-3xl md:text-4xl font-bold leading-tight text-gray-900 dark:text-white mb-12">
-                    The Origin Story
-                </h2>
-
-                <div className="grid grid-cols-[40px_1fr] gap-x-6">
-                    {/* Timeline Item 1 */}
-                    <div className="flex flex-col items-center gap-1 pt-3">
-                        <div className="text-primary bg-black p-2 rounded-full border border-[#28392e] z-10">
-                            <span className="material-symbols-outlined">flag</span>
-                        </div>
-                        <div className="w-[2px] bg-black h-full grow -mt-1"></div>
-                    </div>
-
-                    <div className="flex flex-1 flex-col py-3 pb-10">
-                        <p className="text-gray-500 dark:text-gray-400 text-sm font-bold tracking-widest uppercase mb-1">
-                            1998
-                        </p>
-                        <h3 className="text-gray-900 dark:text-white text-xl font-bold leading-tight mb-2">
-                            Founded in a Basement
-                        </h3>
-                        <p className="text-gray-600 dark:text-gray-400 text-base">
-                            We started with just two second-hand tables and a passion for the sport. The goal was simple: provide a place where the game came first.
-                        </p>
-                    </div>
-
-                    {/* Timeline Item 2 */}
-                    <div className="flex flex-col items-center gap-1">
-                        <div className="w-[2px] bg-black h-4 -mb-1"></div>
-                        <div className="text-white bg-black p-2 rounded-full border border-[#28392e] z-10">
-                            <span className="material-symbols-outlined">emoji_events</span>
-                        </div>
-                        <div className="w-[2px] bg-black h-full grow -mt-1"></div>
-                    </div>
-
-                    <div className="flex flex-1 flex-col py-3 pb-10">
-                        <p className="text-gray-500 dark:text-gray-400 text-sm font-bold tracking-widest uppercase mb-1">
-                            2005
-                        </p>
-                        <h3 className="text-gray-900 dark:text-white text-xl font-bold leading-tight mb-2">
-                            First City Championship
-                        </h3>
-                        <p className="text-gray-600 dark:text-gray-400 text-base">
-                            Hosting our first major tournament put us on the map. Players from across the state came to challenge the local legends.
-                        </p>
-                    </div>
-
-                    {/* Timeline Item 3 */}
-                    <div className="flex flex-col items-center gap-1">
-                        <div className="w-[2px] bg-black h-4 -mb-1"></div>
-                        <div className="text-white bg-black p-2 rounded-full border border-[#28392e] z-10">
-                            <span className="material-symbols-outlined">storefront</span>
-                        </div>
-                        <div className="w-[2px] bg-black h-full grow -mt-1"></div>
-                    </div>
-
-                    <div className="flex flex-1 flex-col py-3 pb-10">
-                        <p className="text-gray-500 dark:text-gray-400 text-sm font-bold tracking-widest uppercase mb-1">
-                            2012
-                        </p>
-                        <h3 className="text-gray-900 dark:text-white text-xl font-bold leading-tight mb-2">
-                            The Grand Expansion
-                        </h3>
-                        <p className="text-gray-600 dark:text-gray-400 text-base">
-                            Moving to our current location allowed us to install 15 Riley Aristocrat tables and build a full-service lounge for our members.
-                        </p>
-                    </div>
-
-                    {/* Timeline Item 4 */}
-                    <div className="flex flex-col items-center gap-1 pb-3">
-                        <div className="w-[2px] bg-black h-4 -mb-1"></div>
-                        <div className="text-primary bg-black p-2 rounded-full border border-[#28392e] z-10">
-                            <span className="material-symbols-outlined">local_police</span>
-                        </div>
-                    </div>
-
-                    <div className="flex flex-1 flex-col py-3">
-                        <p className="text-gray-500 dark:text-gray-400 text-sm font-bold tracking-widest uppercase mb-1">
-                            2023
-                        </p>
-                        <h3 className="text-gray-900 dark:text-white text-xl font-bold leading-tight mb-2">
-                            National Recognition
-                        </h3>
-                        <p className="text-gray-600 dark:text-gray-400 text-base">
-                            Awarded "Best Snooker Hall" in the region. A testament to our commitment to maintaining professional standards.
-                        </p>
-                    </div>
-                </div>
-            </section>
 
             {/* -- Philosophy Section -- */}
             <section className="py-16 bg-white dark:bg-[#152319] w-full">
@@ -183,7 +96,7 @@ const About = () => {
                             </div>
                             <div>
                                 <h3 className="text-lg font-bold mb-2">World-Class Equipment</h3>
-                                <p className="text-sm text-gray-500 dark:text-gray-400">Play on professional Riley Aristocrat tables maintained daily with Strachan 6811 cloth.</p>
+                                <p className="text-sm text-gray-500 dark:text-gray-400">Play on professional Apex and Sharma pool tables maintained daily with Strachan 6811 cloth.</p>
                             </div>
                         </div>
 
@@ -205,7 +118,7 @@ const About = () => {
                             </div>
                             <div>
                                 <h3 className="text-lg font-bold mb-2">Premium Hospitality</h3>
-                                <p className="text-sm text-gray-500 dark:text-gray-400">Full-service bar and premium leather lounge for post-game relaxation and strategy talks.</p>
+                                <p className="text-sm text-gray-500 dark:text-gray-400">Full-service pool and premium leather lounge for post-game relaxation and strategy talks.</p>
                             </div>
                         </div>
                     </div>
@@ -215,21 +128,21 @@ const About = () => {
             {/* -- Team Section -- */}
             <section className="py-20 bg-[#f0f2f0] dark:bg-[#0d1b11] border-t border-gray-200 dark:border-[#28392e]">
                 <div className="max-w-[1280px] mx-auto px-4 md:px-10">
-                    <h2 className="text-3xl font-bold mb-12">Meet the Team</h2>
+                    <h2 className="text-3xl font-bold mb-12">Meet the Teams</h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {/* Team Member 1 */}
                         <div className="p-6 rounded-xl bg-white dark:bg-[#152319] shadow-sm flex flex-col gap-4">
                             <div className="w-full aspect-square rounded-xl overflow-hidden bg-gray-200">
                                 <img
-                                    src={teamImg1}
-                                    alt="David Miller"
+                                    src={teamImg2}
+                                    alt="Mohit Manik"
                                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                                 />
                             </div>
                             <div>
-                                <div className="font-bold text-sm">Sushant Sinha</div>
-                                <div className="text-xs text-gray-500">Co-founder</div>
+                                <div className="font-bold text-sm">Mohit Manik</div>
+                                <div className="text-xs text-gray-500">Founder</div>
                             </div>
                         </div>
 
@@ -237,14 +150,68 @@ const About = () => {
                         <div className="p-6 rounded-xl bg-white dark:bg-[#152319] shadow-sm flex flex-col gap-4">
                             <div className="w-full aspect-square rounded-xl overflow-hidden bg-gray-200">
                                 <img
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAx78c1FR2ijOKkzcjvdjkt8_72nFZJellEUawHn0F2Pj7kfA3KlNSkawgA-QgWs96kt95uGUkFs70BCLq5jdGXOilnbQTVmmEfGdvLvh8D_I5wYHqZykUtsqzTfuAsWQa2czjrvCrbW1_9euaqtnKoyfW6zkN8VkNp7DQof4qKA8j9TBKX8kgxVO3IVJHYmrnxZXmR8g3QsDLvoowJ2eOa36SEpac1CQ1I76_snrr5XqMoiFLytsb_RPSpRC02WmnQqsiabTfZuae-"
-                                    alt="Sarah Jenkins"
+                                    src={teamImg1}
+                                    alt="Sushant Sinha"
                                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                                 />
                             </div>
                             <div>
-                                <div className="font-bold text-sm">Sarah Jenkins</div>
-                                <div className="text-xs text-gray-500">Senior Instructor</div>
+                                <div className="font-bold text-sm">Sushant Sinha</div>
+                                <div className="text-xs text-gray-500">Founder</div>
+                            </div>
+                        </div>
+
+                        {/* Team Member 3 */}
+                        <a href="https://cudo.in/">
+                            <div className="p-6 rounded-xl bg-white dark:bg-[#152319] shadow-sm flex flex-col gap-4">
+                                <div className="w-full aspect-square rounded-xl overflow-hidden bg-gray-200">
+                                    <img
+                                        src={teamImg3}
+                                        // src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDWOOCntn2EUTd63mh9lV9XCpmv-bx5Vwgj56KjJlCE6oHnpESDhcjeAia5GKovUSBCcGczAFUxunqeglpAuhF8jEvW4CIO4t5Ok-sI17Hs3PPaoPfVv8zKVJYiQCzPUkQu1sn2jGM153DjL1ykiNN1mTCwohL5w9dicGRmiMrgDujaXheEiiHjnR6XubHe-wpwqDJowrOVxHvC3-30fKIo1F9DlNANu_qwx1Ymx5WqlzCJkgn2UZJksOCZQILwpyDYeE9b2VNxTEU"
+                                        alt="AK"
+                                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                                    />
+                                </div>
+                                <div>
+                                    <div className="font-bold text-sm">Aman Kumar</div>
+                                    <div className="text-xs text-gray-500">Digital Partener</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div className="max-w-[1280px] mx-auto px-4 md:px-10 pt-5">
+                    <h2 className="text-3xl font-bold mb-12">Management teams</h2>
+
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+
+                        {/* Team Member 1 */}
+                        <div className="p-6 rounded-xl bg-white dark:bg-[#152319] shadow-sm flex flex-col gap-4">
+                            <div className="w-full aspect-square rounded-xl overflow-hidden bg-gray-200">
+                                <img
+                                    src="https://ui-avatars.com/api/?name=Sweta+Manik&size=512&background=0D8ABC&color=fff"
+                                    alt="Sweta manik"
+                                    className="w-full h-full rounded-full object-cover hover:scale-105 transition-transform duration-500"
+                                />
+                            </div>
+                            <div>
+                                <div className="font-bold text-sm">Sweta Manik</div>
+                                <div className="text-xs text-gray-500">Co founder</div>
+                            </div>
+                        </div>
+
+                        {/* Team Member 2 */}
+                        <div className="p-6 rounded-xl bg-white dark:bg-[#152319] shadow-sm flex flex-col gap-4">
+                            <div className="w-full aspect-square rounded-xl overflow-hidden bg-gray-200">
+                                <img
+                                    src="https://ui-avatars.com/api/?name=Vishal+Sinha&size=512&background=2E7D32&color=fff"
+                                    alt="S.S"
+                                    className="w-full h-full rounded-full object-cover hover:scale-105 transition-transform duration-500"
+                                />
+                            </div>
+                            <div>
+                                <div className="font-bold text-sm">Vishal Sinha</div>
+                                <div className="text-xs text-gray-500">Co Founder</div>
                             </div>
                         </div>
 
@@ -252,18 +219,35 @@ const About = () => {
                         <div className="p-6 rounded-xl bg-white dark:bg-[#152319] shadow-sm flex flex-col gap-4">
                             <div className="w-full aspect-square rounded-xl overflow-hidden bg-gray-200">
                                 <img
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDWOOCntn2EUTd63mh9lV9XCpmv-bx5Vwgj56KjJlCE6oHnpESDhcjeAia5GKovUSBCcGczAFUxunqeglpAuhF8jEvW4CIO4t5Ok-sI17Hs3PPaoPfVv8zKVJYiQCzPUkQu1sn2jGM153DjL1ykiNN1mTCwohL5w9dicGRmiMrgDujaXheEiiHjnR6XubHe-wpwqDJowrOVxHvC3-30fKIo1F9DlNANu_qwx1Ymx5WqlzCJkgn2UZJksOCZQILwpyDYeE9b2VNxTEU"
-                                    alt="Marcus Chen"
-                                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                                    src="https://ui-avatars.com/api/?name=Aditya+Sinha&size=512&background=6A1B9A&color=fff"
+                                    alt="AS"
+                                    className="w-full h-full rounded-full object-cover hover:scale-105 transition-transform duration-500"
                                 />
                             </div>
                             <div>
-                                <div className="font-bold text-sm">Marcus Chen</div>
-                                <div className="text-xs text-gray-500">Tournament Director</div>
+                                <div className="font-bold text-sm">Aditya Sinha</div>
+                                <div className="text-xs text-gray-500">Management</div>
                             </div>
                         </div>
+
+                        {/* Team Member 4 */}
+                        <div className="p-6 rounded-xl bg-white dark:bg-[#152319] shadow-sm flex flex-col gap-4">
+                            <div className="w-full aspect-square rounded-xl overflow-hidden bg-gray-200">
+                                <img
+                                    src="https://ui-avatars.com/api/?name=Shubham+Manik&size=512&background=AD1457&color=fff"
+                                    alt="AS"
+                                    className="w-full h-full rounded-full object-cover hover:scale-105 transition-transform duration-500"
+                                />
+                            </div>
+                            <div>
+                                <div className="font-bold text-sm">Shubham Manik</div>
+                                <div className="text-xs text-gray-500">Management</div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
+
             </section>
 
             {/* CTA Section */}
@@ -287,18 +271,10 @@ const About = () => {
                             relative overflow-hidden
                             h-12 px-8 rounded-lg
                             bg-yellow-400 text-[#102216] text-base font-bold
-                            transition-all duration-300 ease-out
-
-                            before:absolute before:inset-0
-                            before:bg-black
-                            before:translate-x-[-100%]
-                            before:transition-transform before:duration-300
-                            hover:before:translate-x-0
-
-                            hover:shadow-[0_0_30px_rgba(17,212,82,0.6)]
+                            transition-all duration-300 ease-out hover:text-white hover:bg-black
                             "
                         >
-                            <span className="relative z-10 transition-colors duration-300 hover:text-white">
+                            <span className="relative z-10 transition-colors duration-300">
                                 Learn More
                             </span>
                         </button>
@@ -314,12 +290,8 @@ const About = () => {
                             transition-all duration-300 ease-out
 
                             before:absolute before:inset-0
-                            before:bg-yellow-400
                             before:translate-x-[-100%]
-                            before:transition-transform before:duration-300
-                            hover:before:translate-x-0
-
-                            hover:text-black"
+                            hover:text-black hover:bg-yellow-500"
                         >
                             <span className="relative z-10 transition-colors duration-300">
                                 View Membership
