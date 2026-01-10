@@ -33,7 +33,7 @@ const Footer = () => {
                                 <FaFacebook className="text-[1.5rem] text-white hover:text-yellow-400" />
                             </a>
                             <a href="https://www.instagram.com/ultimatesnooker_poolarena?igsh=MTNhOGJsNHVsbXQ2cA%3D%3D&utm_source=qr">
-                                <SiInstagram className="text-[1.5rem] text-white hover:text-yellow-400" />
+                                <SiInstagram className="text-[1.4rem] text-white hover:text-yellow-400" />
                             </a>
                             {/* <a href="/twitter">
                                 <FiTwitter className="text-[1.5rem] text-white hover:text-yellow-400" />

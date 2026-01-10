@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from '../assets/logo.png'
 
 // ["Home", "Amenities", "Membership", "Events", "Contact"]
@@ -36,6 +36,7 @@ const section = [
 ]
 const Navbar = () => {
     const [open, setOpen] = useState(false)
+    const navigate = useNavigate();
     return (
         <header className="fixed top-0 z-50 w-full border-b border-gray-200 bg-[#fffffff1] backdrop-blur-md">
             <div className="px-4 md:px-10 py-3 max-w-[1280px] mx-auto flex items-center justify-between">
@@ -44,12 +45,16 @@ const Navbar = () => {
                 <a href="/">
                     <div className="flex items-center gap-4">
                         <div className="text-yellow-500">
-                            <img src={logo} alt="logo" className="w-10 bg-black rounded-full select-none" />
+                            <img src={logo} alt="logo" className="w-10 bg-black hidden sm:block rounded-full select-none" />
                             {/* <span className="material-symbols-outlined text-3xl hidden sm:block">playing_cards</span> */}
                         </div>
                         <h2 className="text-lg font-bold hidden sm:block select-none">
                             US<span className="text-yellow-500">&</span>PA Club
                         </h2>
+                        <h2 className="text-lg font-bold block sm:hidden select-none">
+                            US<span className="text-yellow-500">&</span>PA
+                        </h2>
+
                     </div>
                 </a>
 
@@ -74,7 +79,7 @@ const Navbar = () => {
                         bg-yellow-400 text-[#102216] font-bold rounded-lg shadow
                         transition-all duration-300 ease-out hover:text-white hover:bg-black 
                     "
-                        onClick={() => toast.success('Coming Soon...')}
+                        onClick={() => navigate("/bookTable")}
                     >
                         <span className="relative z-10">
                             Table Book
@@ -112,7 +117,7 @@ const Navbar = () => {
                     <button
                         className="w-full h-10 bg-yellow-400 text-[#102216] font-bold rounded-lg hover:bg-green-600 transition"
                         onClick={() => {
-                            toast.success("Coming Soon...");
+                            navigate("/bookTable")
                             setOpen(false);
                         }}
                     >

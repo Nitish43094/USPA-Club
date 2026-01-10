@@ -3,6 +3,7 @@ import toast from "react-hot-toast";
 import uspaLocation from "../assets/USPA Location.png"
 import { SiInstagram } from "react-icons/si";
 import logo from '../assets/logo.png'
+
 export default function Contact() {
     const [formData, setFormData] = useState({
         name: "",
@@ -11,12 +12,53 @@ export default function Contact() {
         subject: "General Inquiry",
         message: ""
     });
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Handle form submission here
-        toast.success("Send Successfull")
-        console.log("Form submitted:", formData);
+        setIsSubmitting(true);
+
+        try {
+            // Send data to CRM API
+            const response = await fetch('https://crm.ultimatesnookerandpoolarena.com/api/api_contact.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const result = await response.json();
+
+            if (response.ok && result.success) {
+                // Success
+                toast.success(result.message || "Message sent successfully! We'll get back to you soon.");
+
+                // Clear form
+                setFormData({
+                    name: "",
+                    email: "",
+                    phone: "",
+                    subject: "General Inquiry",
+                    message: ""
+                });
+            } else {
+                // API returned error
+                if (result.errors) {
+                    // Display validation errors
+                    const errorMessages = Object.values(result.errors).join(', ');
+                    toast.error(errorMessages);
+                } else {
+                    toast.error(result.message || "Failed to send message. Please try again.");
+                }
+            }
+        } catch (error) {
+            // Network or other error
+            console.error('Contact form error:', error);
+            toast.error("Unable to send message. Please check your connection and try again.");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const handleChange = (e) => {
@@ -136,10 +178,20 @@ export default function Contact() {
                                 <div className="pt-2">
                                     <button
                                         type="submit"
-                                        className="w-full md:w-auto px-8 h-12 bg-yellow-400 text-[#102216] font-bold rounded-lg transition-all transform active:scale-95 duration-300 ease-out hover:text-white hover:bg-black flex items-center justify-center gap-2"
+                                        disabled={isSubmitting}
+                                        className="w-full md:w-auto px-8 h-12 bg-yellow-400 text-[#102216] font-bold rounded-lg transition-all transform active:scale-95 duration-300 ease-out hover:text-white hover:bg-black flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                                     >
-                                        <span>Send Message</span>
-                                        <span className="material-symbols-outlined text-[20px] font-bold">send</span>
+                                        {isSubmitting ? (
+                                            <>
+                                                <span className="animate-spin">⏳</span>
+                                                <span>Sending...</span>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <span>Send Message</span>
+                                                <span className="material-symbols-outlined text-[20px] font-bold">send</span>
+                                            </>
+                                        )}
                                     </button>
                                 </div>
                             </form>

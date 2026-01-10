@@ -31,256 +31,209 @@ export default function Products() {
     const [selectedCategory, setSelectedCategory] = useState("All");
 
     const categories = ["All", "Cues", "Accessories", "Apparel", "Tables"];
-
+    // const categories = ["All"];
     const products = [
         {
             id: 1,
-            name: "Professional Snooker Cue",
+            name: "Premium Cue Case",
             category: "Cues",
-            // price: 12999,
-            image:img1,
-            // image: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=500&h=500&fit=crop",
-            description: "Premium ash wood cue with leather grip",
+            image: img1,
+            description: "High-quality hard cue case designed to protect your cue from damage",
             inStock: true
         },
         {
             id: 2,
-            name: "Cue Case - Deluxe",
-            category: "Accessories",
-            // price: 2499,
-            image:img2,
-            // image: "https://images.unsplash.com/photo-1611329857570-f02f340e7378?w=500&h=500&fit=crop",
-            description: "Hard shell case for 2 cues",
+            name: "Premium Cue Case",
+            category: "Cues",
+            image: img2,
+            description: "Durable hard shell cue case for carrying and storing two cues safely",
             inStock: true
         },
         {
             id: 3,
-            name: "Premium Chalk Set",
-            category: "Accessories",
-            // price: 299,
-            image:img3,
-            // image: "https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?w=500&h=500&fit=crop",
-            description: "Pack of 12 professional grade chalks",
+            name: "Premium BLP Cue",
+            category: "Cues",
+            image: img3,
+            description: "Professional BLP cue made from premium wood for smooth and accurate shots",
             inStock: true
         },
         {
             id: 4,
-            name: "Club T-Shirt",
+            name: "Chalk",
             category: "Apparel",
-            // price: 899,
-            image:img4,
-            // image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&h=500&fit=crop",
-            description: "Official US&PA Club branded t-shirt",
+            image: img4,
+            description: "High-quality billiard chalk for better grip and improved shot control",
             inStock: true
         },
         {
             id: 5,
-            name: "Cue Tip Shaper",
-            category: "Accessories",
-            // price: 599,
-            image:img5,
-            // image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500&h=500&fit=crop",
-            description: "Professional tip shaper and scuffer",
+            name: "Premium Cue",
+            category: "Cues",
+            image: img5,
+            description: "Premium quality cue designed for accuracy, balance, and durability",
             inStock: true
         },
         {
             id: 6,
-            name: "Training Cue Ball",
-            category: "Accessories",
-            // price: 1299,
-            image:img6,
-            // image: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=500&h=500&fit=crop",
-            description: "Marked cue ball for spin training",
+            name: "Premium Cue",
+            category: "Cues",
+            image: img6,
+            description: "Well-balanced professional cue for smooth and powerful gameplay",
             inStock: true
         },
         {
             id: 7,
-            name: "Club Hoodie",
-            category: "Apparel",
-            // price: 1899,
-            image:img7,
-            // image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500&h=500&fit=crop",
-            description: "Premium cotton hoodie with club logo",
+            name: "Premium Cue",
+            category: "Cues",
+            image: img7,
+            description: "High-end cue crafted for professional and advanced players",
             inStock: true
         },
         {
             id: 8,
-            name: "Mini Pool Table",
-            category: "Tables",
-            // price: 45999,
-            image:img8,
-            // image: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=500&h=500&fit=crop",
-            description: "6ft home practice table",
+            name: "Premium Cue",
+            category: "Cues",
+            image: img8,
+            description: "Top-grade premium cue offering excellent grip and shot precision",
             inStock: true
         },
         {
             id: 9,
-            name: "Cue Extension",
+            name: "Premium Cover",
             category: "Accessories",
-            // price: 1499,
-            image:img9,
-            // image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500&h=500&fit=crop",
-            description: "Telescopic cue extension",
+            image: img9,
+            description: "Protective cue cover to keep your cue safe from dust and scratches",
             inStock: true
         },
         {
             id: 10,
-            name: "Professional Snooker Cue",
+            name: "Premium Cover",
             category: "Cues",
-            // price: 12999,
-            image:img10,
-            // image: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=500&h=500&fit=crop",
-            description: "Premium ash wood cue with leather grip",
+            image: img10,
+            description: "Stylish and durable cue cover for safe storage and transport",
             inStock: true
         },
         {
             id: 11,
-            name: "Cue Case - Deluxe",
+            name: "Premium Cover",
             category: "Accessories",
-            // price: 2499,
-            image:img11,
-            // image: "https://images.unsplash.com/photo-1611329857570-f02f340e7378?w=500&h=500&fit=crop",
-            description: "Hard shell case for 2 cues",
+            image: img11,
+            description: "Hard protective cue cover to prevent wear and physical damage",
             inStock: true
         },
         {
             id: 12,
-            name: "Premium Chalk Set",
+            name: "Chalk Holder",
             category: "Accessories",
-            // price: 299,
-            image:img12,
-            // image: "https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?w=500&h=500&fit=crop",
-            description: "Pack of 12 professional grade chalks",
+            image: img12,
+            description: "Convenient chalk holder to keep your chalk secure while playing",
             inStock: true
         },
         {
             id: 13,
-            name: "Club T-Shirt",
+            name: "Premium Cue",
             category: "Apparel",
-            // price: 899,
-            image:img13,
-            // image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&h=500&fit=crop",
-            description: "Official US&PA Club branded t-shirt",
+            image: img13,
+            description: "Premium quality cue designed for smooth shots and professional performance",
             inStock: true
         },
         {
             id: 14,
-            name: "Cue Tip Shaper",
+            name: "Training Cue Ball",
             category: "Accessories",
-            // price: 599,
-            image:img14,
-            // image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500&h=500&fit=crop",
-            description: "Professional tip shaper and scuffer",
+            image: img14,
+            description: "Special training cue ball used to practice spin and shot accuracy",
             inStock: true
         },
         {
             id: 15,
-            name: "Training Cue Ball",
+            name: "Chalk",
             category: "Accessories",
-            // price: 1299,
-            image:img15,
-            // image: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=500&h=500&fit=crop",
-            description: "Marked cue ball for spin training",
+            image: img15,
+            description: "Professional billiard chalk for consistent grip on the cue tip",
             inStock: false
         },
         {
             id: 16,
-            name: "Club Hoodie",
+            name: "Chalk",
             category: "Apparel",
-            // price: 1899,
-            image:img16,
-            // image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500&h=500&fit=crop",
-            description: "Premium cotton hoodie with club logo",
+            image: img16,
+            description: "High-quality pool chalk designed for better ball control",
             inStock: true
         },
         {
             id: 17,
-            name: "Mini Pool Table",
+            name: "Blue Billiard Chalk",
             category: "Tables",
-            // price: 45999,
-            image:img17,
-            // image: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=500&h=500&fit=crop",
-            description: "6ft home practice table",
+            image: img17,
+            description: "Premium blue chalk that improves grip and reduces miscues",
             inStock: true
         },
         {
             id: 18,
-            name: "Cue Extension",
+            name: "Chalk box",
             category: "Accessories",
-            // price: 1499,
-            image:img18,
-            // image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500&h=500&fit=crop",
-            description: "Telescopic cue extension",
+            image: img18,
+            description: "Storage box for keeping multiple chalk pieces organized",
             inStock: true
         },
         {
             id: 19,
-            name: "Training Cue Ball",
+            name: "Chalk Box",
             category: "Accessories",
-            // price: 1299,
-            image:img19,
-            // image: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=500&h=500&fit=crop",
-            description: "Marked cue ball for spin training",
+            image: img19,
+            description: "Compact chalk box for easy carrying and protection of chalk",
             inStock: false
         },
         {
             id: 20,
-            name: "Club Hoodie",
+            name: "Cue Tips",
             category: "Apparel",
-            // price: 1899,
-            image:img20,
-            // image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500&h=500&fit=crop",
-            description: "Premium cotton hoodie with club logo",
+            image: img20,
+            description: "High-quality cue tips designed for better grip and shot accuracy",
             inStock: true
         },
         {
             id: 21,
-            name: "Mini Pool Table",
+            name: "Cue Tips",
             category: "Tables",
-            // price: 45999,
-            image:img21,
-            // image: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=500&h=500&fit=crop",
-            description: "6ft home practice table",
+            image: img21,
+            description: "Professional cue tips suitable for practice and competitive play",
             inStock: true
         },
         {
             id: 22,
-            name: "Training Cue Ball",
+            name: "LP Cue Tips",
             category: "Accessories",
-            // price: 1299,
-            image:img22,
-            // image: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=500&h=500&fit=crop",
-            description: "Marked cue ball for spin training",
-            inStock: false
+            image: img22,
+            description: "LP branded cue tips offering long-lasting performance and precision",
+            inStock: true
         },
         {
             id: 23,
-            name: "Club Hoodie",
+            name: "Century Tips",
             category: "Apparel",
-            // price: 1899,
-            image:img23,
-            // image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500&h=500&fit=crop",
-            description: "Premium cotton hoodie with club logo",
+            image: img23,
+            description: "Century brand cue tips for consistent and powerful shots",
             inStock: true
         },
         {
             id: 24,
-            name: "Mini Pool Table",
+            name: "Blue Billiard Chalk",
             category: "Tables",
-            // price: 45999,
-            image:img17,
-            // image: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=500&h=500&fit=crop",
-            description: "6ft home practice table",
+            image: img17,
+            description: "Premium blue billiard chalk for smooth strokes and improved control",
             inStock: true
-        },
+        }
     ];
+
 
     const filteredProducts = selectedCategory === "All"
         ? products
         : products.filter(p => p.category === selectedCategory);
 
     return (
-        <div className="flex flex-col min-h-screen bg-background-light dark:bg-background-dark font-display text-[#111813] dark:text-white antialiased overflow-x-hidden">
+        <div className="flex flex-col mt-[-5px] min-h-screen bg-background-light dark:bg-background-dark font-display text-[#111813] dark:text-white antialiased overflow-x-hidden">
 
             {/* Hero Section */}
             <section className="relative min-h-[400px] flex items-center justify-center overflow-hidden mt-16">
@@ -328,7 +281,7 @@ export default function Products() {
                     </div>
                 </div>
             </section>
-            
+
 
             {/* Products Grid */}
             <section className="py-16 px-4 md:px-10 max-w-[1280px] mx-auto w-full">

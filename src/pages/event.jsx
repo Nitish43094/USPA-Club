@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import toast from "react-hot-toast";
 import Calendar from '../components/Calendar'
+import { useNavigate } from "react-router-dom";
 const Event = () => {
+    const navigate = useNavigate();
     const [selectedFilter, setSelectedFilter] = useState("all");
     const [searchQuery, setSearchQuery] = useState("");
 
@@ -87,7 +89,7 @@ const Event = () => {
     ];
 
     return (
-        <div className="flex flex-col min-h-screen bg-background-light dark:bg-background-dark font-display text-[#111813] dark:text-white antialiased overflow-x-hidden">
+        <div className="flex flex-col mt-[-5px] min-h-screen bg-background-light dark:bg-background-dark font-display text-[#111813] dark:text-white antialiased overflow-x-hidden">
             {/* Hero Section */}
             <section className="relative min-h-[480px] flex items-center justify-center overflow-hidden mt-16">
                 <div
@@ -113,7 +115,7 @@ const Event = () => {
                         </h2>
                         <div className="flex flex-wrap gap-4 mt-4">
                             <button
-                                onClick={() => toast.success("Comming Soon...")}
+                                onClick={() => navigate('/bookTable')}
                                 className="h-12 px-6 bg-yellow-400 text-[#102216] text-base font-bold rounded-lg duration-300 ease-out hover:text-white hover:bg-black">
                                 Table Book
                             </button>

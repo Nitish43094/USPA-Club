@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import img1 from '../assets/galleryImg1.jpeg'
 import img2 from '../assets/galleryImg2.jpeg'
@@ -12,20 +12,45 @@ import img8 from '../assets/Table.jpeg'
 export default function Gallery() {
     const navigate = useNavigate()
     const [selectedImage, setSelectedImage] = useState(null);
+    const [selectedIndex, setSelectedIndex] = useState(null);
+
+    const closeLightbox = () => setSelectedIndex(null);
+
+    const nextImage = () => {
+        setSelectedIndex((prev) =>
+            prev === filteredImages.length - 1 ? 0 : prev + 1
+        );
+    };
+
+    const prevImage = () => {
+        setSelectedIndex((prev) =>
+            prev === 0 ? filteredImages.length - 1 : prev - 1
+        );
+    };
+
+    useEffect(() => {
+        const handleKey = (e) => {
+            if (selectedIndex === null) return;
+            if (e.key === "ArrowRight") nextImage();
+            if (e.key === "ArrowLeft") prevImage();
+            if (e.key === "Escape") closeLightbox();
+        };
+
+        window.addEventListener("keydown", handleKey);
+        return () => window.removeEventListener("keydown", handleKey);
+    }, [selectedIndex]);
 
     // Gallery images - you can replace these with your actual images
     const galleryImages = [
         {
             id: 1,
             src: img8,
-            // src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCSIqL5ukWBfO6oIy1XQU4hIsPgIoxASvwInxseMnhOR4l_AvrgZ7g8o7Eqj9tdRQ-qU9EwG8RhTZVOVF_om7zM3_aUy01JTTftwH6yml3-kpJ7WLB1yzkopTiK6HJGQ_VzyREnycuYyoCtb88kx78-pMeBWTVl_Dm70VwHbS32HPe06tVlMaX586sm6S2DrYgnQJyN4TEP07kfcbZZvCeTU5KIZARoUoIbUqJu8QZ1mIp3jVuhFQQcLU1Fauzs-ns3sZmNmwA2i8OD",
             title: "Professional Table",
             category: "Tables"
         },
         {
             id: 2,
             src:img5,
-            // src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBi5XFHMLpFKeecUw2kFZP1U7lM5KbflmO17Nm-6aMxFrOpa47JXpBtNtyUWG-8_xrXJMy8AeU4n-Ogrfl1iNRSSaYBQsFrVrGE08C61SUWgfL8MXAxOS1utWRhGHOTZfRuwJxRxKMT4KJuI6W5CEmR0B0B_mcGczAGMHCCM9EgR5mgDKrjLD59IiFxKmMZFl00GM9GqS703EA0hPSLK1TAgx81sv43RHUPgYvnA2d0WnJvtioX-M90SOvVQrp_20PfYnN8YocwiDfZ",
             title: "Chalking the Cue",
             category: "Equipment"
         },
@@ -38,42 +63,36 @@ export default function Gallery() {
         {
             id: 4,
             src:img4,
-            // src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBniC9RyfauBn1ofO2m3nI40zrbMCvNKjeNCUjCrkK7mzhqFgJYj_xGd32U42xSyt0R_KWXo_pJ6wiq_vmOtYSoTXlQEpXUtsyEgOLv5_yBJqH0w53A7eAToeOBDUqmy9p9IKS20gYS2eWma6I5KxmY94KWPdiL-jwsg-8VpwOd18evolXPu-msSGY5coZGBKjw3xjIlqWAK7w9H3VKQxT2lOCZ78RwCUZTKUU9UcQrQSXIw3rBlF5SxsjvHOIHQJGHAvwGmpqUz4Mm",
             title: "Tournament Ready",
             category: "Events"
         },
         {
             id: 5,
             src:img2,
-            // src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCSIqL5ukWBfO6oIy1XQU4hIsPgIoxASvwInxseMnhOR4l_AvrgZ7g8o7Eqj9tdRQ-qU9EwG8RhTZVOVF_om7zM3_aUy01JTTftwH6yml3-kpJ7WLB1yzkopTiK6HJGQ_VzyREnycuYyoCtb88kx78-pMeBWTVl_Dm70VwHbS32HPe06tVlMaX586sm6S2DrYgnQJyN4TEP07kfcbZZvCeTU5KIZARoUoIbUqJu8QZ1mIp3jVuhFQQcLU1Fauzs-ns3sZmNmwA2i8OD",
             title: "Perfect Shot",
             category: "Action"
         },
         {
             id: 6,
             src:img6,
-            // src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBi5XFHMLpFKeecUw2kFZP1U7lM5KbflmO17Nm-6aMxFrOpa47JXpBtNtyUWG-8_xrXJMy8AeU4n-Ogrfl1iNRSSaYBQsFrVrGE08C61SUWgfL8MXAxOS1utWRhGHOTZfRuwJxRxKMT4KJuI6W5CEmR0B0B_mcGczAGMHCCM9EgR5mgDKrjLD59IiFxKmMZFl00GM9GqS703EA0hPSLK1TAgx81sv43RHUPgYvnA2d0WnJvtioX-M90SOvVQrp_20PfYnN8YocwiDfZ",
             title: "Premium Equipment",
             category: "Equipment"
         },
         {
             id: 7,
             src:img1,
-            // src: "https://lh3.googleusercontent.com/aida-public/AB6AXuAuBcmNoJ-MwA51zssvqEBchGjxJXYiSP7t6-m8WXe1VyIhLMTnY9AIIHnL4Gxu3Ca39roIOhCh-p7T3OufLfZy1GJIhLETmqQIrvvPPaJBDhQVGlVuQo9HeLYR9XbQEAc49tgQoY4gWJg7iXbCa8j0V8-h78quBqNxxsc6H4RRa4vfQg6HNgLb2_gkAL5Ub4ul5r5bjgRh5aREEpOPt7ScIebU_rC03N57vGkcPtB6YGHuaT1fGwNNpxF3wZ3dHnt7jhk2vxfMRwkb",
             title: "Club Atmosphere",
             category: "Atmosphere"
         },
         {
             id: 8,
             src:img3,
-            // src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBniC9RyfauBn1ofO2m3nI40zrbMCvNKjeNCUjCrkK7mzhqFgJYj_xGd32U42xSyt0R_KWXo_pJ6wiq_vmOtYSoTXlQEpXUtsyEgOLv5_yBJqH0w53A7eAToeOBDUqmy9p9IKS20gYS2eWma6I5KxmY94KWPdiL-jwsg-8VpwOd18evolXPu-msSGY5coZGBKjw3xjIlqWAK7w9H3VKQxT2lOCZ78RwCUZTKUU9UcQrQSXIw3rBlF5SxsjvHOIHQJGHAvwGmpqUz4Mm",
             title: "Championship Tables",
             category: "Tables"
         },
         {
             id: 9,
             src:img2,
-            // src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCSIqL5ukWBfO6oIy1XQU4hIsPgIoxASvwInxseMnhOR4l_AvrgZ7g8o7Eqj9tdRQ-qU9EwG8RhTZVOVF_om7zM3_aUy01JTTftwH6yml3-kpJ7WLB1yzkopTiK6HJGQ_VzyREnycuYyoCtb88kx78-pMeBWTVl_Dm70VwHbS32HPe06tVlMaX586sm6S2DrYgnQJyN4TEP07kfcbZZvCeTU5KIZARoUoIbUqJu8QZ1mIp3jVuhFQQcLU1Fauzs-ns3sZmNmwA2i8OD",
             title: "Tournament Action",
             category: "Events"
         }
@@ -87,7 +106,7 @@ export default function Gallery() {
         : galleryImages.filter(img => img.category === activeCategory);
 
     return (
-        <div className="flex flex-col min-h-screen bg-background-light dark:bg-background-dark font-display text-[#111813] dark:text-white antialiased overflow-x-hidden">
+        <div className="flex flex-col mt-[-5px] min-h-screen bg-background-light dark:bg-background-dark font-display text-[#111813] dark:text-white antialiased overflow-x-hidden">
             {/* ================= HERO ================= */}
             <section className="relative min-h-[400px] flex items-center justify-center overflow-hidden mt-16">
                 <div
@@ -142,7 +161,13 @@ export default function Gallery() {
                         <div
                             key={image.id}
                             className="group relative overflow-hidden rounded-xl bg-gray-100 dark:bg-[#152319] aspect-square cursor-pointer border border-gray-200 dark:border-[#28392e] hover:border-primary/50 transition-all duration-300"
-                            onClick={() => setSelectedImage(image)}
+                            onClick={() =>
+                                setSelectedIndex(
+                                    filteredImages.findIndex(
+                                        (img) => img.id === image.id
+                                    )
+                                )
+                            }
                         >
                             <img
                                 src={image.src}
@@ -162,7 +187,7 @@ export default function Gallery() {
                     ))}
                 </div>
 
-                {filteredImages.length === 0 && (
+                 {filteredImages.length === 0 && (
                     <div className="text-center py-20">
                         <p className="text-gray-500 dark:text-gray-400 text-lg">
                             No images found in this category.
@@ -199,6 +224,42 @@ export default function Gallery() {
                             </h3>
                         </div>
                     </div>
+                </div>
+            )}
+
+            {selectedIndex !== null && (
+                <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center">
+
+                    {/* Close Button */}
+                    <button
+                        className="absolute top-6 right-6 text-white text-3xl font-bold"
+                        onClick={closeLightbox}
+                    >
+                        ✕
+                    </button>
+
+                    {/* Previous Button */}
+                    <button
+                        className="absolute left-4 md:left-10 text-white text-5xl select-none"
+                        onClick={prevImage}
+                    >
+                        ❮
+                    </button>
+
+                    {/* Image */}
+                    <img
+                        src={filteredImages[selectedIndex].src}
+                        alt=""
+                        className="max-w-[90vw] max-h-[90vh] rounded-xl shadow-2xl"
+                    />
+
+                    {/* Next Button */}
+                    <button
+                        className="absolute right-4 md:right-10 text-white text-5xl select-none"
+                        onClick={nextImage}
+                    >
+                        ❯
+                    </button>
                 </div>
             )}
 

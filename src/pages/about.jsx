@@ -5,8 +5,11 @@ import teamImg3 from '../assets/aman-kumar.jpeg'
 import suraj from '../assets/suraj.jpg'
 import aditya from '../assets/Aditya-sinha.jpeg'
 import vishal from '../assets/Vishal-sinha.jpeg'
+import sweta from '../assets/Sweta-manik.jpeg'
+import shubham from '../assets/Shubham.jpeg'
 import { useNavigate } from "react-router-dom";
 import Counter from "../components/Counter";
+
 const About = () => {
     const navigate = useNavigate()
 
@@ -40,7 +43,7 @@ const About = () => {
             </section>
 
             {/* ================= STATS ================= */}
-            <section className="bg-black border-y border-[#28392e] py-8">
+            {/* <section className="bg-black border-y border-[#28392e] py-8">
                 <div className="max-w-[1280px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
 
                     <div>
@@ -72,7 +75,7 @@ const About = () => {
                     </div>
 
                 </div>
-            </section>
+            </section> */}
 
             {/* -- Origin Story Section -- */}
 
@@ -135,34 +138,38 @@ const About = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {/* Team Member 1 */}
-                        <div className="p-6 rounded-xl bg-white dark:bg-[#152319] shadow-sm flex flex-col gap-4">
-                            <div className="w-full aspect-square rounded-xl overflow-hidden bg-gray-200">
-                                <img
-                                    src={teamImg2}
-                                    alt="Mohit Manik"
-                                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                                />
+                        <a href="https://www.instagram.com/manikmohit?igsh=cnEwNWZ0YXV2cXkx">
+                            <div className="p-6 rounded-xl bg-white dark:bg-[#152319] shadow-sm flex flex-col gap-4">
+                                <div className="w-full aspect-square rounded-xl overflow-hidden bg-gray-200">
+                                    <img
+                                        src={teamImg2}
+                                        alt="Mohit Manik"
+                                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                                    />
+                                </div>
+                                <div>
+                                    <div className="font-bold text-sm">Mohit Manik</div>
+                                    <div className="text-xs text-gray-500">Founder</div>
+                                </div>
                             </div>
-                            <div>
-                                <div className="font-bold text-sm">Mohit Manik</div>
-                                <div className="text-xs text-gray-500">Founder</div>
-                            </div>
-                        </div>
+                        </a>
 
                         {/* Team Member 2 */}
-                        <div className="p-6 rounded-xl bg-white dark:bg-[#152319] shadow-sm flex flex-col gap-4">
-                            <div className="w-full aspect-square rounded-xl overflow-hidden bg-gray-200">
-                                <img
-                                    src={teamImg1}
-                                    alt="Sushant Sinha"
-                                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                                />
+                        <a href="https://www.instagram.com/147sushant/?igsh=cmxwbnZqMHY5a2hu#">
+                            <div className="p-6 rounded-xl bg-white dark:bg-[#152319] shadow-sm flex flex-col gap-4">
+                                <div className="w-full aspect-square rounded-xl overflow-hidden bg-gray-200">
+                                    <img
+                                        src={teamImg1}
+                                        alt="Sushant Sinha"
+                                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                                    />
+                                </div>
+                                <div>
+                                    <div className="font-bold text-sm">Sushant Sinha</div>
+                                    <div className="text-xs text-gray-500">Founder</div>
+                                </div>
                             </div>
-                            <div>
-                                <div className="font-bold text-sm">Sushant Sinha</div>
-                                <div className="text-xs text-gray-500">Founder</div>
-                            </div>
-                        </div>
+                        </a>
 
                         {/* Team Member 3 */}
                         <a href="https://cudo.in/">
@@ -186,15 +193,15 @@ const About = () => {
                 <div className="max-w-[1280px] mx-auto px-4 md:px-10 pt-5">
                     <h2 className="text-3xl font-bold mb-12">Management teams</h2>
 
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
                         {/* Team Member 1 */}
                         <div className="p-6 rounded-xl bg-white dark:bg-[#152319] shadow-sm flex flex-col gap-4">
                             <div className="w-full aspect-square rounded-xl overflow-hidden bg-gray-200">
                                 <img
-                                    src="https://ui-avatars.com/api/?name=Sweta+Manik&size=512&background=0D8ABC&color=fff"
+                                    src={sweta}
                                     alt="Sweta manik"
-                                    className="w-full h-full rounded-full object-cover hover:scale-105 transition-transform duration-500"
+                                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                                 />
                             </div>
                             <div>
@@ -207,14 +214,14 @@ const About = () => {
                         <div className="p-6 rounded-xl bg-white dark:bg-[#152319] shadow-sm flex flex-col gap-4">
                             <div className="w-full aspect-square rounded-xl overflow-hidden bg-gray-200">
                                 <img
-                                    src="https://ui-avatars.com/api/?name=Vishal+Sinha&size=512&background=2E7D32&color=fff"
-                                    alt="S.S"
-                                    className="w-full h-full rounded-full object-cover hover:scale-105 transition-transform duration-500"
+                                    src={vishal}
+                                    alt="AS"
+                                    className="w-full h-full  hover:scale-105 transition-transform duration-500"
                                 />
                             </div>
                             <div>
                                 <div className="font-bold text-sm">Vishal Sinha</div>
-                                <div className="text-xs text-gray-500">Co Founder</div>
+                                <div className="text-xs text-gray-500">Co founder</div>
                             </div>
                         </div>
 
@@ -222,14 +229,14 @@ const About = () => {
                         <div className="p-6 rounded-xl bg-white dark:bg-[#152319] shadow-sm flex flex-col gap-4">
                             <div className="w-full aspect-square rounded-xl overflow-hidden bg-gray-200">
                                 <img
-                                    src="https://ui-avatars.com/api/?name=Aditya+Sinha&size=512&background=6A1B9A&color=fff"
+                                    src={aditya}
                                     alt="AS"
-                                    className="w-full h-full rounded-full object-cover hover:scale-105 transition-transform duration-500"
+                                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                                 />
                             </div>
                             <div>
                                 <div className="font-bold text-sm">Aditya Sinha</div>
-                                {/* <div className="text-xs text-gray-500">Management</div> */}
+                                <div className="text-xs text-gray-500">Management</div>
                             </div>
                         </div>
 
@@ -237,14 +244,15 @@ const About = () => {
                         <div className="p-6 rounded-xl bg-white dark:bg-[#152319] shadow-sm flex flex-col gap-4">
                             <div className="w-full aspect-square rounded-xl overflow-hidden bg-gray-200">
                                 <img
-                                    src="https://ui-avatars.com/api/?name=Shubham+Manik&size=512&background=AD1457&color=fff"
+                                    src={shubham}
+                                    // src="https://ui-avatars.com/api/?name=Shubham+Manik&size=512&background=AD1457&color=fff"
                                     alt="AS"
-                                    className="w-full h-full rounded-full object-cover hover:scale-105 transition-transform duration-500"
+                                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                                 />
                             </div>
                             <div>
                                 <div className="font-bold text-sm">Shubham Manik</div>
-                                {/* <div className="text-xs text-gray-500">Management</div> */}
+                                <div className="text-xs text-gray-500">Management</div>
                             </div>
                         </div>
                         {/* Team Member 5 */}
@@ -258,35 +266,7 @@ const About = () => {
                             </div>
                             <div>
                                 <div className="font-bold text-sm">Suraj Nag</div>
-                                {/* <div className="text-xs text-gray-500">Management</div> */}
-                            </div>
-                        </div>
-                        {/* Team Member 4 */}
-                        <div className="p-6 rounded-xl bg-white dark:bg-[#152319] shadow-sm flex flex-col gap-4">
-                            <div className="w-full aspect-square rounded-xl overflow-hidden bg-gray-200">
-                                <img
-                                    src={aditya}
-                                    alt="AS"
-                                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                                />
-                            </div>
-                            <div>
-                                <div className="font-bold text-sm">Aditya Sinha</div>
-                                {/* <div className="text-xs text-gray-500">Management</div> */}
-                            </div>
-                        </div>
-                        {/* Team Member 4 */}
-                        <div className="p-6 rounded-xl bg-white dark:bg-[#152319] shadow-sm flex flex-col gap-4">
-                            <div className="w-full aspect-square rounded-xl overflow-hidden bg-gray-200">
-                                <img
-                                    src={vishal}
-                                    alt="AS"
-                                    className="w-full h-full  hover:scale-105 transition-transform duration-500"
-                                />
-                            </div>
-                            <div>
-                                <div className="font-bold text-sm">Vishal Sinha</div>
-                                {/* <div className="text-xs text-gray-500">Management</div> */}
+                                <div className="text-xs text-gray-500">Worker</div>
                             </div>
                         </div>
                     </div>

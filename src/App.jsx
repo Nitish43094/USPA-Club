@@ -5,7 +5,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Book from './pages/book'
 import Event from './pages/event'
-import ClubFaci from './pages/clubfaci'
+import BookTable from './pages/bookTable'
 import Gallery from './pages/gallery'
 import Contact from './pages/contact'
 import Products from './pages/products'
@@ -19,7 +19,7 @@ function App() {
         <Route path='/book' element={<Book />} />
         <Route path='/event' element={<Event />} />
         <Route path='/products' element={<Products />} />
-        <Route path='/facilities' element={<ClubFaci />} />
+        <Route path='/bookTable' element={<BookTable />} />
         <Route path='/gallery' element={<Gallery />} />
         <Route path='/contact' element={<Contact />} />
         {/* <Route path='/PrivacyPolicy' element={<PrivacyPolicy />} /> */}

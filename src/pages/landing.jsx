@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Counter from '../components/Counter'
+import abhisek from '../assets/Review/Abhishel.png'
+import sheikh from '../assets/Review/Sheikh.png'
 export default function Landing() {
+    
     const navigate = useNavigate()
     return (
-        <div className="flex flex-col min-h-screen bg-background-light dark:bg-background-dark font-display text-[#111813] dark:text-white antialiased overflow-x-hidden">
+        <div className="flex flex-col mt-[-5px] min-h-screen bg-background-light dark:bg-background-dark font-display text-[#111813] dark:text-white antialiased overflow-x-hidden">
 
             {/* ================= HERO ================= */}
             <section className="relative min-h-[600px] flex items-center justify-center overflow-hidden mt-16">
@@ -20,7 +22,7 @@ export default function Landing() {
 
                 <div className="relative z-10 max-w-4xl text-center px-4 flex flex-col items-center gap-6">
                     <span className="inline-block w-max px-3 py-1 border-[0.001rem] border-yellow-300 bg-[#f1cb0c4b] text-yellow-400 text-[0.8rem] uppercase font-bold rounded-full">
-                        Premier Snooker Club
+                        Ultimate Snooker & Pool Arena
                     </span>
 
                     <h1 className="text-4xl md:text-6xl font-black text-white">
@@ -28,7 +30,7 @@ export default function Landing() {
                     </h1>
 
                     <p className="text-gray-200 xl:text-[1.3rem] md:text-xl max-w-2xl  font-normal leading-relaxed text-shadow">
-                        Experience the city's finest cuesports destination. Apex and Sharma pool tables , upscale dining, and a community of true enthusiasts.
+                        Experience the city's finest cuesports destination. Sharma and Apex, snooker and pool tables , upscale dining, and a community of true enthusiasts.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -61,40 +63,6 @@ export default function Landing() {
                 </div>
             </section>
 
-            {/* ================= STATS ================= */}
-            {/* <section className="bg-black border-y border-[#28392e] py-8">
-                <div className="max-w-[1280px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-
-                    <div>
-                        <div className="text-3xl font-black text-white">
-                            <Counter end={16} />
-                        </div>
-                        <div className="text-sm text-gray-400">Pro Tables</div>
-                    </div>
-
-                    <div>
-                        <div className="text-3xl font-black text-white">
-                            <Counter end={24} suffix="/7" />
-                        </div>
-                        <div className="text-sm text-gray-400">Member Access</div>
-                    </div>
-
-                    <div>
-                        <div className="text-3xl font-black text-white">
-                            <Counter end={500} suffix="+" />
-                        </div>
-                        <div className="text-sm text-gray-400">Active Members</div>
-                    </div>
-
-                    <div>
-                        <div className="text-3xl font-black text-white">
-                            Weekly
-                        </div>
-                        <div className="text-sm text-gray-400">Tournaments</div>
-                    </div>
-
-                </div>
-            </section> */}
             {/* -- Features Section -- */}
             <section className="py-20 px-4 md:px-10 max-w-[1280px] mx-auto w-full" id="amenities">
                 <div className="flex flex-col md:flex-row gap-12 items-start">
@@ -194,14 +162,14 @@ export default function Landing() {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
                             <div className="relative z-10 p-6">
-                                <div className="bg-primary text-[#102216] text-xs font-bold px-2 py-1 rounded w-fit mb-2">
+                                {/* <div className="bg-primary text-[#102216] text-xs font-bold px-2 py-1 rounded w-fit mb-2">
                                     OCT 24
-                                </div>
+                                </div> */}
                                 <h3 className="text-white text-xl font-bold mb-1">
                                     Friday Night Shootout
                                 </h3>
                                 <p className="text-gray-300 text-sm">
-                                    Open entry. $500 Prize Pot.
+                                    Open entry. &#x20B9;500 Prize Pot.
                                 </p>
                             </div>
                         </div>
@@ -215,9 +183,9 @@ export default function Landing() {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
                             <div className="relative z-10 p-6">
-                                <div className="bg-white text-black text-xs font-bold px-2 py-1 rounded w-fit mb-2">
+                                {/* <div className="bg-white text-black text-xs font-bold px-2 py-1 rounded w-fit mb-2">
                                     NOV 02
-                                </div>
+                                </div> */}
                                 <h3 className="text-white text-xl font-bold mb-1">
                                     Amateur League Finals
                                 </h3>
@@ -301,13 +269,13 @@ export default function Landing() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                     {/* Card 1 */}
                     <div className="flex flex-col gap-6 rounded-2xl border border-gray-200 dark:border-[#28392e] bg-white dark:bg-[#152319] p-8 hover:-translate-y-1 transition-all duration-300">
                         <div>
                             <h3 className="text-lg font-bold mb-1">Basic</h3>
                             <p className="text-sm text-gray-500 dark:text-gray-400">
-                                For the occasional player
+                                For the Solo player
                             </p>
                         </div>
 
@@ -404,12 +372,6 @@ export default function Landing() {
                                 </span>
                                 Valid from 11 AM to 4 PM
                             </li>
-                            {/* <li className="flex gap-3 text-sm text-gray-600 dark:text-gray-300">
-                                <span className="material-symbols-outlined text-primary text-[20px]">
-                                    check
-                                </span>
-                                1 Guest pass per month
-                            </li> */}
                         </ul>
                     </div>
 
@@ -424,7 +386,7 @@ export default function Landing() {
 
                         <div className="flex items-baseline gap-1">
                             <span className="text-4xl font-black text-gray-900 dark:text-white">
-                                &#x20B9;8999
+                                &#x20B9;9999
                             </span>
                             <span className="text-gray-500 dark:text-gray-400 font-medium">
                                 / month
@@ -465,9 +427,62 @@ export default function Landing() {
                             </li> */}
                         </ul>
                     </div>
+                    {/* Card 4 */}
+                    <div className="flex flex-col gap-6 rounded-2xl border border-gray-200 dark:border-[#28392e] bg-white dark:bg-[#152319] p-8 hover:-translate-y-1 transition-all duration-300">
+                        <div>
+                            <h3 className="text-lg font-bold mb-1">Coaching</h3>
+                            <p className="text-sm text-gray-500 dark:text-gray-400">
+                                For the Solo player
+                            </p>
+                        </div>
+
+                        <div className="flex items-baseline gap-1">
+                            <span className="text-4xl font-black text-gray-900 dark:text-white">
+                                &#x20B9;1999
+                            </span>
+                            <span className="text-gray-500 dark:text-gray-400 font-medium">
+                                / month
+                            </span>
+                        </div>
+                        <button
+                            onClick={() => navigate("/contact")}
+                            className="
+                            w-full inline-flex items-center justify-center
+                            rounded-lg h-12
+                            bg-gray-100 dark:bg-[#28392e]
+                            text-gray-900 dark:text-white
+                            font-bold text-sm
+                            hover:bg-gray-200 dark:hover:bg-[#344a3b]
+                            transition-colors
+                        "
+                        >
+                            Walk In
+                        </button>
+
+                        <ul className="flex flex-col gap-3">
+                            <li className="flex gap-3 text-sm text-gray-600 dark:text-gray-300">
+                                <span className="material-symbols-outlined text-primary text-[20px]">
+                                    check
+                                </span>
+                                Standard table
+                            </li>
+                            <li className="flex gap-3 text-sm text-gray-600 dark:text-gray-300">
+                                <span className="material-symbols-outlined text-primary text-[20px]">
+                                    check
+                                </span>
+                                1 hour solo practice.
+                            </li>
+                            <li className="flex gap-3 text-sm text-gray-600 dark:text-gray-300">
+                                <span className="material-symbols-outlined text-primary text-[20px]">
+                                    check
+                                </span>
+                                Play in between 10 To 12 PM
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </section>
-            {/*  */}
+            {/* Rating review */}
             <section className="py-20 bg-[#f0f2f0] dark:bg-[#0d1b11] border-t border-gray-200 dark:border-[#28392e]">
                 <div className="max-w-[1280px] mx-auto px-4 md:px-10">
                     {/* Rating */}
@@ -503,7 +518,7 @@ export default function Landing() {
                                 </div>
                                 <div>
                                     <div className="font-bold text-sm">Shanti Bhushan</div>
-                                    <div className="text-xs text-gray-500">Member since 2025</div>
+                                    {/* <div className="text-xs text-gray-500">Member since 2025</div> */}
                                 </div>
                             </div>
                         </div>
@@ -511,23 +526,22 @@ export default function Landing() {
                         {/* Testimonial 2 */}
                         <div className="p-6 rounded-xl bg-white dark:bg-[#152319] shadow-sm flex flex-col gap-4">
                             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                                "Perfect Place To Enjoy A Game , Whether You Are A Beginner Or A PRO.
-                                    Highly Recommended 🎱 …"
+                                "Recently visited this snooker place & had a great experience. Well maintained tables (looks brand new), good lighting & a relaxed atmosphere so what else do you need to chill and play a game of snooker. Price was also reasonable considering the location hence worth checking out!"
                             </p>
 
                             <div className="flex items-center gap-3 mt-auto">
                                 <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
                                     <img
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR7ieV8v4gWlqXOGmwSMPlTaPxsucb4FdKjFv1rXf_1YCa7b2yLq3PGa626qxu8x-KjaXG4hlztCbh9gUWAPotagU3F5u_AIcS4V3DV9LAEbtgHLThjhPPmnayhBS6pknP_281Cj4bTDqQwGt5PmizRK5-JMLb0hHAixAPnVZtBpOrK9JdWskg_Bjnw2_66OCq8AYtTDPy8drhly47UqNEoG2eDoLj4JB7DOyoRZGCv6doue6LXxD44z-uda7y0Ba8BX9Pv_SXxPSA"
+                                        src={abhisek}
                                         alt="Female member portrait"
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
                                 <div>
                                     <div className="font-bold text-sm">
-                                        sweta kumari
+                                        Abhishek Kumar Sinha
                                     </div>
-                                    <div className="text-xs text-gray-500">Casual Player</div>
+                                    {/* <div className="text-xs text-gray-500">Casual Player</div> */}
                                 </div>
                             </div>
                         </div>
@@ -541,14 +555,14 @@ export default function Landing() {
                             <div className="flex items-center gap-3 mt-auto">
                                 <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
                                     <img
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMX5WT0ja9I3Tpwk_dysTdDkb1bpDOAnEHP33gq_TVP7ijviJUuch8GMCHETxAT8eSMtg1fXs9dEEXw9TsQZEQ1d85xeMw3hPV6bsJ9soVoj0fRk7aBlK7fN7U1pLxiunEJbzhQEHpufNqZZpjTmBJwESzlJKVxdIic0_J090A_oVbMajwMJvWAi2x_iWg_HTdW6wwg9edX6mhqoX6HdnoSbbSvJZTFjYM90eqevRB_ncB3ASiBmGq9DVf-HKlILHcmVJpSwBqk5gN"
+                                        src={sheikh}
                                         alt="Male member portrait"
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
                                 <div>
                                     <div className="font-bold text-sm">SHEIKH ASAD</div>
-                                    <div className="text-xs text-gray-500">Casual Player</div>
+                                    {/* <div className="text-xs text-gray-500">Casual Player</div> */}
                                 </div>
                             </div>
                         </div>
