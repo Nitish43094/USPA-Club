@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import teamImg1 from '../assets/teamImage1.jpeg'
 import teamImg2 from '../assets/mohit-manik.jpeg'
 import teamImg3 from '../assets/aman-kumar.jpeg'
-import suraj from '../assets/suraj.jpg'
+import suraj from '../assets/Suraj.jpg'
 import aditya from '../assets/Aditya-sinha.jpeg'
 import vishal from '../assets/Vishal-sinha.jpeg'
 import sweta from '../assets/Sweta-manik.jpeg'
 import shubham from '../assets/Shubham.jpeg'
 import { useNavigate } from "react-router-dom";
-import Counter from "../components/Counter";
 
 const About = () => {
     const navigate = useNavigate()
