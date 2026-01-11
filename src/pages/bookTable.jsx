@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 export default function BookTable() {
-    const [date, setDate] = useState('2026-01-01');
+    const today = new Date().toISOString().split('T')[0];
+    const [date, setDate] = useState(today);
     const [duration, setDuration] = useState('2 Hours');
     const [startTime, setStartTime] = useState('17:00');
-    const [selectedTable, setSelectedTable] = useState('Table 3');
+    const [selectedTable, setSelectedTable] = useState('Table 2');
 
     // New State for Customer Details
     const [customerName, setCustomerName] = useState('');
@@ -31,6 +33,7 @@ export default function BookTable() {
     const getHourlyRate = () => {
         // "The Arena" is the VIP Match Table
         if (selectedTable === 'The Arena') return 500;
+        if (selectedTable === 'Pool Table') return 180;
         return 300; // Standard tables
     };
 
@@ -80,21 +83,18 @@ export default function BookTable() {
             startTime,
             numberOfPlayers,
             notes,
-            costBreakdown: costDetails
+            totalAmount: costDetails.total
         };
 
-        console.log("=== Table Booking Details ===");
-        console.log(bookingDetails);
-        console.log("=============================");
+        // Note: costBreakdown is calculated on backend usually, but we could send it if needed.
+        // For security, usually backend recalculates. We'll send the core data.
 
-        alert(
-            `Booking Confirmed for ${customerName}!\nTotal: ₹${costDetails.total.toFixed(2)}\nCheck console for details.`
-        );
-
+        const loadingToast = toast.loading("Processing booking...");
 
         try {
             // Send data to CRM API
-            const response = await fetch('', {
+            // Using the production URL pattern but pointing to our new MVC route
+            const response = await fetch('https://crm.ultimatesnookerandpoolarena.com/?route=bookings/api_store', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -104,32 +104,30 @@ export default function BookTable() {
 
             const result = await response.json();
 
+            toast.dismiss(loadingToast);
+
             if (response.ok && result.success) {
                 // Success
-                toast.success(result.message || "Message sent successfully! We'll get back to you soon.");
+                toast.success(result.message || `Booking Confirmed for ${customerName}!`);
+
                 // Clear form
                 setCustomerName("");
                 setPhoneNumber("");
-                setSelectedTable(null);
-                setDate("");
-                setDuration("");
-                setStartTime("");
-                setNumberOfPlayers(1);
+                // keep table/date selected or reset? 
+                // setDate(""); // Allow rebooking same day?
+                // setDuration("2 Hours");
                 setNotes("");
             } else {
                 // API returned error
-                if (result.errors) {
-                    // Display validation errors
-                    const errorMessages = Object.values(result.errors).join(', ');
-                    toast.error(errorMessages);
-                } else {
-                    toast.error(result.message || "Failed to send message. Please try again.");
-                }
+                const msg = result.message || "Failed to confirm booking.";
+                toast.error(msg);
+                console.error("Booking Error:", result);
             }
         } catch (error) {
+            toast.dismiss(loadingToast);
             // Network or other error
-            console.error('Contact form error:', error);
-            toast.error("Unable to send message. Please check your connection and try again.");
+            console.error('Booking request error:', error);
+            toast.error("Unable to connect to server. Please try again later.");
         }
     };
 
@@ -332,25 +330,73 @@ export default function BookTable() {
                                     {/* Tables Grid */}
                                     <div className="grid grid-cols-2 md:grid-cols-3 gap-8 h-full relative z-10 text-white">
 
-                                        {/* Table 1 (Occupied) */}
-                                        <div className="relative flex items-center justify-center">
-                                            <div className="w-24 h-40 md:w-28 md:h-48 rounded-md bg-[#2a2a2a] border-4 border-[#3a3a3a] relative shadow-lg opacity-50 cursor-not-allowed">
-                                                <div className="absolute inset-2 bg-[#2d3830] rounded-sm"></div>
+                                        {/* Table 1 (Available) - Originally Pool Table */}
+                                        <div
+                                            className="relative flex items-center justify-center group/table cursor-pointer"
+                                            onClick={() => setSelectedTable('Pool Table')}
+                                        >
+                                            <div className={`
+                                                w-24 h-40 md:w-28 md:h-48 rounded-md bg-[#3e2b20] border-4 relative shadow-xl transition-transform group-hover/table:scale-105
+                                                ${selectedTable === 'Pool Table' ? 'border-primary' : 'border-[#5d4037]'}
+                                            `}>
+                                                <div className={`
+                                                    absolute inset-2 transition-colors rounded-sm flex items-center justify-center
+                                                    ${selectedTable === 'Pool Table' ? 'bg-primary' : 'bg-primary/20 group-hover/table:bg-primary/40'}
+                                                `}>
+                                                    {selectedTable === 'Pool Table' ? (
+                                                        <span className="material-symbols-outlined text-background-dark text-3xl font-bold">check</span>
+                                                    ) : (
+                                                        <span className="text-primary font-bold text-xs opacity-0 group-hover/table:opacity-100">SELECT</span>
+                                                    )}
+                                                </div>
                                                 <div className="absolute top-0 left-0 w-3 h-3 bg-black rounded-full -m-1"></div>
                                                 <div className="absolute top-0 right-0 w-3 h-3 bg-black rounded-full -m-1"></div>
                                                 <div className="absolute bottom-0 left-0 w-3 h-3 bg-black rounded-full -m-1"></div>
                                                 <div className="absolute bottom-0 right-0 w-3 h-3 bg-black rounded-full -m-1"></div>
                                             </div>
-                                            <span className="absolute -bottom-6 text-xs font-bold text-white/30">Table 1</span>
+                                            <span className={`absolute -bottom-6 text-xs font-bold ${selectedTable === 'Pool Table' ? 'text-primary' : 'text-white/70'}`}>Pool Table</span>
+                                            {selectedTable === 'Pool Table' && (
+                                                <div className="absolute inset-0 w-36 h-56 bg-primary/20 rounded-xl blur-md animate-pulse -z-10 translate-x-[-15px] translate-y-[-15px]"></div>
+                                            )}
                                         </div>
 
-                                        {/* Table 2 (Available) */}
+                                        {/* Table 1 (Available) - Originally Table 2 */}
                                         <div
                                             className="relative flex items-center justify-center group/table cursor-pointer"
-                                            onClick={() => setSelectedTable('Table 2')}
+                                            onClick={() => setSelectedTable('Table 1')}
                                         >
                                             <div className={`
                                                 w-24 h-40 md:w-28 md:h-48 rounded-md bg-[#3e2b20] border-4 relative shadow-xl transition-transform group-hover/table:scale-105
+                                                ${selectedTable === 'Table 1' ? 'border-primary' : 'border-[#5d4037]'}
+                                            `}>
+                                                <div className={`
+                                                    absolute inset-2 transition-colors rounded-sm flex items-center justify-center
+                                                    ${selectedTable === 'Table 1' ? 'bg-primary' : 'bg-primary/20 group-hover/table:bg-primary/40'}
+                                                `}>
+                                                    {selectedTable === 'Table 1' ? (
+                                                        <span className="material-symbols-outlined text-background-dark text-3xl font-bold">check</span>
+                                                    ) : (
+                                                        <span className="text-primary font-bold text-xs opacity-0 group-hover/table:opacity-100">SELECT</span>
+                                                    )}
+                                                </div>
+                                                <div className="absolute top-0 left-0 w-3 h-3 bg-black rounded-full -m-1"></div>
+                                                <div className="absolute top-0 right-0 w-3 h-3 bg-black rounded-full -m-1"></div>
+                                                <div className="absolute bottom-0 left-0 w-3 h-3 bg-black rounded-full -m-1"></div>
+                                                <div className="absolute bottom-0 right-0 w-3 h-3 bg-black rounded-full -m-1"></div>
+                                            </div>
+                                            <span className={`absolute -bottom-6 text-xs font-bold ${selectedTable === 'Table 1' ? 'text-primary' : 'text-white/70'}`}>Table 1</span>
+                                            {selectedTable === 'Table 1' && (
+                                                <div className="absolute inset-0 w-36 h-56 bg-primary/20 rounded-xl blur-md animate-pulse -z-10 translate-x-[-15px] translate-y-[-15px]"></div>
+                                            )}
+                                        </div>
+
+                                        {/* Table 2 (Selected in HTML default) - Originally Table 3 */}
+                                        <div
+                                            className="relative flex items-center justify-center cursor-pointer group/table"
+                                            onClick={() => setSelectedTable('Table 2')}
+                                        >
+                                            <div className={`
+                                                w-24 h-40 md:w-28 md:h-48 rounded-md bg-[#3e2b20] border-4 relative shadow-2xl transition-transform group-hover/table:scale-105
                                                 ${selectedTable === 'Table 2' ? 'border-primary' : 'border-[#5d4037]'}
                                             `}>
                                                 <div className={`
@@ -374,23 +420,21 @@ export default function BookTable() {
                                             )}
                                         </div>
 
-                                        {/* Table 3 (Selected in HTML default, Logic here handles it) */}
+                                        {/* Table 3 (Standard) - Originally Table 4 */}
                                         <div
-                                            className="relative flex items-center justify-center cursor-pointer group/table"
+                                            className="relative flex items-center justify-center group/table cursor-pointer"
                                             onClick={() => setSelectedTable('Table 3')}
                                         >
                                             <div className={`
-                                                w-24 h-40 md:w-28 md:h-48 rounded-md bg-[#3e2b20] border-4 relative shadow-2xl transition-transform group-hover/table:scale-105
+                                                w-24 h-40 md:w-28 md:h-48 rounded-md bg-[#3e2b20] border-4 relative shadow-xl transition-transform group-hover/table:scale-105
                                                 ${selectedTable === 'Table 3' ? 'border-primary' : 'border-[#5d4037]'}
                                             `}>
                                                 <div className={`
                                                     absolute inset-2 transition-colors rounded-sm flex items-center justify-center
-                                                    ${selectedTable === 'Table 3' ? 'bg-primary' : 'bg-primary/20 group-hover/table:bg-primary/40'}
+                                                    ${selectedTable === 'Table 3' ? 'bg-primary' : 'bg-[#2d3830] group-hover/table:bg-primary/40'}
                                                 `}>
-                                                    {selectedTable === 'Table 3' ? (
+                                                    {selectedTable === 'Table 3' && (
                                                         <span className="material-symbols-outlined text-background-dark text-3xl font-bold">check</span>
-                                                    ) : (
-                                                        <span className="text-primary font-bold text-xs opacity-0 group-hover/table:opacity-100">SELECT</span>
                                                     )}
                                                 </div>
                                                 <div className="absolute top-0 left-0 w-3 h-3 bg-black rounded-full -m-1"></div>
@@ -404,53 +448,12 @@ export default function BookTable() {
                                             )}
                                         </div>
 
-                                        {/* Table 4 (Standard) */}
-                                        <div
-                                            className="relative flex items-center justify-center group/table cursor-pointer"
-                                            onClick={() => setSelectedTable('Table 4')}
-                                        >
-                                            <div className={`
-                                                w-24 h-40 md:w-28 md:h-48 rounded-md bg-[#3e2b20] border-4 relative shadow-xl transition-transform group-hover/table:scale-105
-                                                ${selectedTable === 'Table 4' ? 'border-primary' : 'border-[#5d4037]'}
-                                            `}>
-                                                <div className={`
-                                                    absolute inset-2 transition-colors rounded-sm flex items-center justify-center
-                                                    ${selectedTable === 'Table 4' ? 'bg-primary' : 'bg-[#2d3830] group-hover/table:bg-primary/40'}
-                                                `}>
-                                                    {selectedTable === 'Table 4' && (
-                                                        <span className="material-symbols-outlined text-background-dark text-3xl font-bold">check</span>
-                                                    )}
-                                                </div>
-                                                <div className="absolute top-0 left-0 w-3 h-3 bg-black rounded-full -m-1"></div>
-                                                <div className="absolute top-0 right-0 w-3 h-3 bg-black rounded-full -m-1"></div>
-                                                <div className="absolute bottom-0 left-0 w-3 h-3 bg-black rounded-full -m-1"></div>
-                                                <div className="absolute bottom-0 right-0 w-3 h-3 bg-black rounded-full -m-1"></div>
-                                            </div>
-                                            <span className={`absolute -bottom-6 text-xs font-bold ${selectedTable === 'Table 4' ? 'text-primary' : 'text-white/70'}`}>Table 4</span>
-                                            {selectedTable === 'Table 4' && (
-                                                <div className="absolute inset-0 w-36 h-56 bg-primary/20 rounded-xl blur-md animate-pulse -z-10 translate-x-[-15px] translate-y-[-15px]"></div>
-                                            )}
-                                        </div>
-
-                                        {/* Match Table (VIP) */}
-                                        <div
-                                            className="relative col-span-2 flex items-center justify-center group/table cursor-pointer"
-                                            onClick={() => setSelectedTable('The Arena')}
-                                        >
-                                            {/* <div className="absolute top-0 right-10 bg-gradient-to-r from-yellow-500 to-amber-600 text-[10px] font-black px-2 py-0.5 rounded text-background-dark uppercase">VIP Match Table</div> */}
-                                            <div className={`
-                                                w-56 h-36 md:w-72 md:h-44 rounded-md bg-[#4a3525] border-4 relative shadow-2xl transition-transform group-hover/table:scale-[1.02] rotate-0
-                                                ${selectedTable === 'The Arena' ? 'border-yellow-500' : 'border-[#8d6e63]'}
-                                            `}>
-                                                <div className={`
-                                                    absolute inset-2 transition-colors rounded-sm flex items-center justify-center
-                                                    ${selectedTable === 'The Arena' ? 'bg-[#1f5c35]/80 border border-yellow-500/50' : 'bg-[#1a472a] group-hover/table:bg-[#1f5c35]'}
-                                                `}>
+                                        {/* Match Table (VIP) - Occupied */}
+                                        <div className="relative col-span-2 flex items-center justify-center">
+                                            <div className="w-56 h-36 md:w-72 md:h-44 rounded-md bg-[#2a2a2a] border-4 border-[#3a3a3a] relative shadow-lg opacity-50 cursor-not-allowed rotate-0">
+                                                <div className="absolute inset-2 bg-[#2d3830] rounded-sm flex items-center justify-center">
                                                     <div className="w-1/2 h-px bg-white/10"></div>
                                                     <div className="h-1/2 w-px bg-white/10 absolute"></div>
-                                                    {selectedTable === 'The Arena' && (
-                                                        <span className="material-symbols-outlined text-yellow-500 text-3xl font-bold absolute">check</span>
-                                                    )}
                                                 </div>
                                                 <div className="absolute top-0 left-0 w-4 h-4 bg-black rounded-full -m-1.5"></div>
                                                 <div className="absolute top-0 right-0 w-4 h-4 bg-black rounded-full -m-1.5"></div>
@@ -459,10 +462,7 @@ export default function BookTable() {
                                                 <div className="absolute bottom-0 right-0 w-4 h-4 bg-black rounded-full -m-1.5"></div>
                                                 <div className="absolute bottom-0 left-1/2 w-4 h-4 bg-black rounded-full -m-1.5 -translate-x-1/2"></div>
                                             </div>
-                                            <span className={`absolute -bottom-6 text-xs font-bold ${selectedTable === 'The Arena' ? 'text-yellow-500' : 'text-yellow-500/70'}`}>The Arena (Match Table)</span>
-                                            {selectedTable === 'The Arena' && (
-                                                <div className="absolute inset-0 w-full h-full bg-yellow-500/10 rounded-xl blur-md animate-pulse -z-10 bg-blend-soft-light"></div>
-                                            )}
+                                            <span className="absolute -bottom-6 text-xs font-bold text-white/30">The Arena (Match Table)</span>
                                         </div>
 
                                     </div>
