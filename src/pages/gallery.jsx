@@ -8,7 +8,9 @@ import img5 from '../assets/galleryImg5.jpeg'
 import img6 from '../assets/galleryImg6.jpeg'
 import img7 from '../assets/galleryImg7.jpeg'
 import img8 from '../assets/Table.jpeg'
-// import img9 from '../assets/galleryImg4.jpeg'
+import img9 from '../assets/aman1.jpeg'
+import img10 from '../assets/aman2.jpeg'
+import img11 from '../assets/aman3.jpeg'
 export default function Gallery() {
     const navigate = useNavigate()
     const [selectedImage, setSelectedImage] = useState(null);
@@ -50,7 +52,7 @@ export default function Gallery() {
         },
         {
             id: 2,
-            src:img5,
+            src: img5,
             title: "Chalking the Cue",
             category: "Equipment"
         },
@@ -62,40 +64,58 @@ export default function Gallery() {
         },
         {
             id: 4,
-            src:img4,
+            src: img4,
             title: "Tournament Ready",
             category: "Events"
         },
         {
             id: 5,
-            src:img2,
+            src: img2,
             title: "Perfect Shot",
             category: "Action"
         },
         {
             id: 6,
-            src:img6,
+            src: img6,
             title: "Premium Equipment",
             category: "Equipment"
         },
         {
             id: 7,
-            src:img1,
+            src: img1,
             title: "Club Atmosphere",
             category: "Atmosphere"
         },
         {
             id: 8,
-            src:img3,
+            src: img3,
             title: "Championship Tables",
             category: "Tables"
         },
         {
             id: 9,
-            src:img2,
+            src: img2,
             title: "Tournament Action",
             category: "Events"
-        }
+        },
+        // {
+        //     id: 10,
+        //     src:img9,
+        //     title: "Tournament Action",
+        //     category: "Winner"
+        // },
+        // {
+        //     id: 11,
+        //     src:img11,
+        //     title: "Championship Tables",
+        //     category: "Tables"
+        // },
+        // {
+        //     id: 12,
+        //     src:img10,
+        //     title: "Tournament Action",
+        //     category: "Events"
+        // }
     ];
 
     const categories = ["All", "Tables", "Equipment", "Atmosphere", "Events", "Action"];
@@ -187,7 +207,7 @@ export default function Gallery() {
                     ))}
                 </div>
 
-                 {filteredImages.length === 0 && (
+                {filteredImages.length === 0 && (
                     <div className="text-center py-20">
                         <p className="text-gray-500 dark:text-gray-400 text-lg">
                             No images found in this category.

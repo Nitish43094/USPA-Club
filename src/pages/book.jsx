@@ -176,7 +176,7 @@ const Book = () => {
                                         </div>
                                         <div className="flex items-center gap-3 text-sm text-white/80">
                                             <span className="material-symbols-outlined text-yellow-400">check</span>
-                                            Play 2 hour in happy hour 2.
+                                            Play 2 hour in happy hour .
                                         </div>
                                         <div className="flex items-center gap-3 text-sm text-white/80">
                                             <span className="material-symbols-outlined text-yellow-400">check</span>
@@ -217,7 +217,7 @@ const Book = () => {
                                         </div>
                                         <div className="flex items-center gap-3 text-sm text-white/80">
                                             <span className="material-symbols-outlined text-yellow-400">check</span>
-                                            Frame Charge Will be applied as 3 rps/ per min.
+                                            Frame Charge Will be applied as ₹3 per min.
                                         </div>
                                         {/* <div className="flex items-center gap-3 text-sm text-white/80">
                                     <span className="material-symbols-outlined text-yellow-400">check</span>
@@ -275,8 +275,8 @@ const Book = () => {
                                             <span className="bg-white/10 text-white text-xs font-bold px-2 py-1 rounded">Coaching</span>
                                         </div>
                                         <div className="flex items-baseline gap-1 mt-2">
-                                            <span className="text-white text-4xl font-black tracking-tight">&#x20B9;1999</span>
-                                            <span className="text-white/60 text-sm font-medium">/ month</span>
+                                            <span className="text-white text-4xl font-black tracking-tight">&#x20B9;1000</span>
+                                            <span className="text-white/60 text-sm font-medium">/ session</span>
                                         </div>
                                         <p className="text-white/60 text-sm">Professional coaching for players</p>
                                     </div>
@@ -310,7 +310,7 @@ const Book = () => {
                                 </div>
                             </div>
 
-                        }
+                    }
 
                 </div>
             </section>

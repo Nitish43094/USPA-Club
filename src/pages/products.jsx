@@ -59,7 +59,7 @@ export default function Products() {
         },
         {
             id: 4,
-            name: "Chalk",
+            name: "Premium Triangle Chalk",
             category: "Apparel",
             image: img4,
             description: "High-quality billiard chalk for better grip and improved shot control",
@@ -139,34 +139,34 @@ export default function Products() {
         },
         {
             id: 14,
-            name: "Training Cue Ball",
+            name: "Premium Snooker Table",
             category: "Accessories",
             image: img14,
-            description: "Special training cue ball used to practice spin and shot accuracy",
+            description: "Premium quality Apex Snooker Table with sturdy construction and smooth playing surface",
             inStock: true
         },
         {
             id: 15,
-            name: "Chalk",
+            name: "Aluminium Cue Case",
             category: "Accessories",
             image: img15,
-            description: "Professional billiard chalk for consistent grip on the cue tip",
+            description: "High-quality Aluminium cue case designed to protect your cue from damage",
             inStock: false
         },
         {
             id: 16,
-            name: "Chalk",
+            name: "Aluminium Cue Case",
             category: "Apparel",
             image: img16,
-            description: "High-quality pool chalk designed for better ball control",
+            description: "Durable Aluminium shell cue case for carrying and storing two cues safely",
             inStock: true
         },
         {
             id: 17,
-            name: "Blue Billiard Chalk",
+            name: "TAOM V10 Chalk",
             category: "Tables",
             image: img17,
-            description: "Premium blue chalk that improves grip and reduces miscues",
+            description: "Premium TAOM V10 chalk that improves grip and reduces miscues",
             inStock: true
         },
         {
@@ -219,10 +219,10 @@ export default function Products() {
         },
         {
             id: 24,
-            name: "Blue Billiard Chalk",
+            name: "TAOM V10 Chalk",
             category: "Tables",
             image: img17,
-            description: "Premium blue billiard chalk for smooth strokes and improved control",
+            description: "Premium TAOM V10 chalk for smooth strokes and improved control",
             inStock: true
         }
     ];
