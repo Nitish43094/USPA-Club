@@ -9,6 +9,7 @@ import BookTable from './pages/bookTable'
 import Gallery from './pages/gallery'
 import Contact from './pages/contact'
 import Products from './pages/products'
+import Error from './components/Error'
 function App() {
   return (
     <div>
@@ -23,6 +24,7 @@ function App() {
         <Route path='/gallery' element={<Gallery />} />
         <Route path='/contact' element={<Contact />} />
         {/* <Route path='/PrivacyPolicy' element={<PrivacyPolicy />} /> */}
+        <Route path='*' element={<Error/>}/>
       </Routes>
       <Footer />
     </div>

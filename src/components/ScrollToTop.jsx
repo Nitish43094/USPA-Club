@@ -8,7 +8,7 @@ const ScrollToTop = () => {
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: "smooth", // agar smooth nahi chahiye to hata sakte ho
+      behavior: "smooth",
     });
   }, [pathname]);
 

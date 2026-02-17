@@ -308,7 +308,7 @@ export default function Contact() {
 
                                 <img
                                     alt="Stylized dark map view of Snooker City location"
-                                    className="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500 scale-110 group-hover:scale-100"
+                                    className="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500 scale-110 group-hover:scale-100 select-none "
                                     src={uspaLocation}
                                 />
 

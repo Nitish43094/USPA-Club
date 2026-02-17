@@ -289,7 +289,7 @@ const About = () => {
 
                         {/* Learn More Button */}
                         <button
-                            onClick={() => navigate("/about")}
+                            onClick={() => navigate("/contact")}
                             className="
                             relative overflow-hidden
                             h-12 px-8 rounded-lg

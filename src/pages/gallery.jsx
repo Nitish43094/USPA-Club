@@ -8,13 +8,236 @@ import img5 from '../assets/galleryImg5.jpeg'
 import img6 from '../assets/galleryImg6.jpeg'
 import img7 from '../assets/galleryImg7.jpeg'
 import img8 from '../assets/Table.jpeg'
-import img9 from '../assets/aman1.jpeg'
-import img10 from '../assets/aman2.jpeg'
 import img11 from '../assets/aman3.jpeg'
+import img12 from '../assets/galleryImg12.jpeg'
+import img13 from '../assets/galleryImg13.jpeg'
+import img14 from '../assets/galleryImg14.jpeg'
+import img15 from '../assets/galleryImg15.jpeg'
+import img16 from '../assets/galleryImg16.jpeg'
+import img17 from '../assets/galleryImg17.jpeg'
+import img18 from '../assets/galleryImg18.jpeg'
+import img19 from '../assets/galleryImg19.jpeg'
+import img20 from '../assets/galleryImg20.jpeg'
+import img21 from '../assets/galleryImg21.jpeg'
+import img22 from '../assets/galleryImg23.jpeg'
+import img23 from '../assets/galleryImg24.jpeg'
+import img24 from '../assets/galleryImg25.jpeg'
+import img25 from '../assets/galleryImg26.jpeg'
+import img26 from '../assets/galleryImg27.jpeg'
+import img27 from '../assets/galleryImg28.jpeg'
+import img28 from '../assets/galleryImg29.jpeg'
+import img29 from '../assets/galleryImg30.jpeg'
+import img30 from '../assets/galleryImg31.jpeg'
+import img31 from '../assets/galleryImg32.jpeg'
+import img32 from '../assets/galleryImg33.jpeg'
+import img33 from '../assets/galleryImg34.jpeg'
+
+const galleryImages = [
+    {
+        id: 1,
+        src: img8,
+        title: "Professional Table",
+        category: "Tables"
+    },
+    {
+        id: 2,
+        src: img5,
+        title: "Chalking the Cue",
+        category: "Equipment"
+    },
+    {
+        id: 3,
+        src: "https://lh3.googleusercontent.com/aida-public/AB6AXuAuBcmNoJ-MwA51zssvqEBchGjxJXYiSP7t6-m8WXe1VyIhLMTnY9AIIHnL4Gxu3Ca39roIOhCh-p7T3OufLfZy1GJIhLETmqQIrvvPPaJBDhQVGlVuQo9HeLYR9XbQEAc49tgQoY4gWJg7iXbCa8j0V8-h78quBqNxxsc6H4RRa4vfQg6HNgLb2_gkAL5Ub4ul5r5bjgRh5aREEpOPt7ScIebU_rC03N57vGkcPtB6YGHuaT1fGwNNpxF3wZ3dHnt7jhk2vxfMRwkb",
+        title: "Game Night",
+        category: "Atmosphere"
+    },
+    {
+        id: 4,
+        src: img4,
+        title: "Tournament Ready",
+        category: "Events"
+    },
+    {
+        id: 5,
+        src: img2,
+        title: "Perfect Shot",
+        category: "Action"
+    },
+    {
+        id: 6,
+        src: img6,
+        title: "Premium Equipment",
+        category: "Equipment"
+    },
+    {
+        id: 7,
+        src: img1,
+        title: "Club Atmosphere",
+        category: "Atmosphere"
+    },
+    {
+        id: 8,
+        src: img3,
+        title: "Championship Tables",
+        category: "Tables"
+    },
+    {
+        id: 9,
+        src: img2,
+        title: "Tournament Action",
+        category: "Events"
+    },
+    {
+        id: 10,
+        src: img7,
+        title: "Tournament Action",
+        category: "Winner"
+    },
+    {
+        id: 11,
+        src: img11,
+        title: "Championship Tables",
+        category: "Tables"
+    },
+    {
+        id: 12,
+        src: img12,
+        title: "Professional Table",
+        category: "Tables"
+    },
+    {
+        id: 13,
+        src: img13,
+        title: "Chalking the Cue",
+        category: "Equipment"
+    },
+    {
+        id: 14,
+        src: img14,
+        title: "Game Night",
+        category: "Atmosphere"
+    },
+    {
+        id: 15,
+        src: img15,
+        title: "Tournament Ready",
+        category: "Events"
+    },
+    {
+        id: 16,
+        src: img16,
+        title: "Perfect Shot",
+        category: "Action"
+    },
+    {
+        id: 17,
+        src: img17,
+        title: "Premium Equipment",
+        category: "Equipment"
+    },
+    {
+        id: 18,
+        src: img18,
+        title: "Club Atmosphere",
+        category: "Atmosphere"
+    },
+    {
+        id: 19,
+        src: img19,
+        title: "Championship Tables",
+        category: "Tables"
+    },
+    {
+        id: 20,
+        src: img20,
+        title: "Tournament Action",
+        category: "Events"
+    },
+    {
+        id: 21,
+        src: img21,
+        title: "Tournament Action",
+        category: "Winner"
+    },
+    {
+        id: 22,
+        src: img22,
+        title: "Championship Tables",
+        category: "Tables"
+    },
+    {
+        id: 23,
+        src: img23,
+        title: "Professional Table",
+        category: "Tables"
+    },
+    {
+        id: 24,
+        src: img24,
+        title: "Chalking the Cue",
+        category: "Equipment"
+    },
+    {
+        id: 25,
+        src: img25,
+        title: "Game Night",
+        category: "Atmosphere"
+    },
+    {
+        id: 26,
+        src: img26,
+        title: "Tournament Ready",
+        category: "Events"
+    },
+    {
+        id: 27,
+        src: img27,
+        title: "Perfect Shot",
+        category: "Action"
+    },
+    {
+        id: 28,
+        src: img28,
+        title: "Premium Equipment",
+        category: "Equipment"
+    },
+    {
+        id: 29,
+        src: img29,
+        title: "Club Atmosphere",
+        category: "Atmosphere"
+    },
+    {
+        id: 30,
+        src: img30,
+        title: "Championship Tables",
+        category: "Tables"
+    },
+    {
+        id: 31,
+        src: img31,
+        title: "Tournament Action",
+        category: "Events"
+    },
+    {
+        id: 32,
+        src: img32,
+        title: "Tournament Action",
+        category: "Winner"
+    },
+    {
+        id: 33,
+        src: img33,
+        title: "Championship Tables",
+        category: "Tables"
+    },
+];
+
 export default function Gallery() {
     const navigate = useNavigate()
     const [selectedImage, setSelectedImage] = useState(null);
     const [selectedIndex, setSelectedIndex] = useState(null);
+    const [imglen, setImgLen] = useState(9);
 
     const closeLightbox = () => setSelectedIndex(null);
 
@@ -41,82 +264,6 @@ export default function Gallery() {
         window.addEventListener("keydown", handleKey);
         return () => window.removeEventListener("keydown", handleKey);
     }, [selectedIndex]);
-
-    // Gallery images - you can replace these with your actual images
-    const galleryImages = [
-        {
-            id: 1,
-            src: img8,
-            title: "Professional Table",
-            category: "Tables"
-        },
-        {
-            id: 2,
-            src: img5,
-            title: "Chalking the Cue",
-            category: "Equipment"
-        },
-        {
-            id: 3,
-            src: "https://lh3.googleusercontent.com/aida-public/AB6AXuAuBcmNoJ-MwA51zssvqEBchGjxJXYiSP7t6-m8WXe1VyIhLMTnY9AIIHnL4Gxu3Ca39roIOhCh-p7T3OufLfZy1GJIhLETmqQIrvvPPaJBDhQVGlVuQo9HeLYR9XbQEAc49tgQoY4gWJg7iXbCa8j0V8-h78quBqNxxsc6H4RRa4vfQg6HNgLb2_gkAL5Ub4ul5r5bjgRh5aREEpOPt7ScIebU_rC03N57vGkcPtB6YGHuaT1fGwNNpxF3wZ3dHnt7jhk2vxfMRwkb",
-            title: "Game Night",
-            category: "Atmosphere"
-        },
-        {
-            id: 4,
-            src: img4,
-            title: "Tournament Ready",
-            category: "Events"
-        },
-        {
-            id: 5,
-            src: img2,
-            title: "Perfect Shot",
-            category: "Action"
-        },
-        {
-            id: 6,
-            src: img6,
-            title: "Premium Equipment",
-            category: "Equipment"
-        },
-        {
-            id: 7,
-            src: img1,
-            title: "Club Atmosphere",
-            category: "Atmosphere"
-        },
-        {
-            id: 8,
-            src: img3,
-            title: "Championship Tables",
-            category: "Tables"
-        },
-        {
-            id: 9,
-            src: img2,
-            title: "Tournament Action",
-            category: "Events"
-        },
-        // {
-        //     id: 10,
-        //     src:img9,
-        //     title: "Tournament Action",
-        //     category: "Winner"
-        // },
-        // {
-        //     id: 11,
-        //     src:img11,
-        //     title: "Championship Tables",
-        //     category: "Tables"
-        // },
-        // {
-        //     id: 12,
-        //     src:img10,
-        //     title: "Tournament Action",
-        //     category: "Events"
-        // }
-    ];
 
     const categories = ["All", "Tables", "Equipment", "Atmosphere", "Events", "Action"];
     const [activeCategory, setActiveCategory] = useState("All");
@@ -176,37 +323,53 @@ export default function Gallery() {
 
             {/* ================= GALLERY GRID ================= */}
             <section className="py-20 px-4 md:px-10 max-w-[1280px] mx-auto w-full">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
                     {filteredImages.map((image) => (
-                        <div
-                            key={image.id}
-                            className="group relative overflow-hidden rounded-xl bg-gray-100 dark:bg-[#152319] aspect-square cursor-pointer border border-gray-200 dark:border-[#28392e] hover:border-primary/50 transition-all duration-300"
-                            onClick={() =>
-                                setSelectedIndex(
-                                    filteredImages.findIndex(
-                                        (img) => img.id === image.id
-                                    )
+                        <div key={image.id}>
+                            {
+                                image.id <= imglen && (
+                                    <div
+                                        className="group relative overflow-hidden rounded-xl bg-gray-100 dark:bg-[#152319] aspect-square cursor-pointer border border-gray-200 dark:border-[#28392e] hover:border-primary/50 transition-all duration-300"
+                                        onClick={() =>
+                                            setSelectedIndex(
+                                                filteredImages.findIndex(
+                                                    (img) => img.id === image.id
+                                                )
+                                            )
+                                        }
+                                    >
+                                        <img
+                                            src={image.src}
+                                            alt={image.title}
+                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                        <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                                            <div className="bg-yellow-400 text-[#102216] text-xs font-bold px-2 py-1 rounded w-fit mb-2">
+                                                {image.category}
+                                            </div>
+                                            <h3 className="text-white text-xl font-bold">
+                                                {image.title}
+                                            </h3>
+                                        </div>
+                                    </div>
                                 )
                             }
-                        >
-                            <img
-                                src={image.src}
-                                alt={image.title}
-                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                            <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                                <div className="bg-yellow-400 text-[#102216] text-xs font-bold px-2 py-1 rounded w-fit mb-2">
-                                    {image.category}
-                                </div>
-                                <h3 className="text-white text-xl font-bold">
-                                    {image.title}
-                                </h3>
-                            </div>
                         </div>
                     ))}
                 </div>
-
+                <div className="col-span-full flex justify-center mt-6">
+                    <button
+                        onClick={() =>
+                            imglen === 9
+                                ? setImgLen(filteredImages.length)
+                                : setImgLen(9)
+                        }
+                        className="px-5 py-2 bg-yellow-400 text-black rounded-md font-medium hover:bg-black hover:text-white transition"
+                    >
+                        {imglen === 9 ? "Show All" : "Show Less"}
+                    </button>
+                </div>
                 {filteredImages.length === 0 && (
                     <div className="text-center py-20">
                         <p className="text-gray-500 dark:text-gray-400 text-lg">

@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import toast from "react-hot-toast";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from '../assets/logo.png'
 
-// ["Home", "Amenities", "Membership", "Events", "Contact"]
 const section = [
     {
         name: "Home",
@@ -37,6 +35,7 @@ const section = [
 const Navbar = () => {
     const [open, setOpen] = useState(false)
     const navigate = useNavigate();
+    const location = useLocation();
     return (
         <header className="fixed top-0 z-50 w-full border-b border-gray-200 bg-[#fffffff1] backdrop-blur-md">
             <div className="px-4 md:px-10 py-3 max-w-[1280px] mx-auto flex items-center justify-between">
@@ -64,9 +63,14 @@ const Navbar = () => {
                         <Link
                             key={item.name}
                             to={item.link}
-                            className="text-sm font-medium hover:text-primary transition-colors"
+                            className={`text-sm font-medium hover:text-primary transition-colors ${location.pathname === item.link && "text-yellow-400"}`}
                         >
                             {item.name}
+                            {
+                                location.pathname === item.link && (
+                                    <div className="bg-yellow-400 w-auto h-[2px]"></div>
+                                )
+                            }
                         </Link>
                     ))}
                 </nav>
